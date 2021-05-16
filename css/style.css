@@ -1,10 +1,17 @@
-    /* Menu Responsivo*/
-    
     * {
         margin: 0;
         padding: 0;
         outline: 0;
         box-sizing: border-box;
+    }
+    
+    body {
+        background-color: black;
+    }
+    /* Menu Responsivo*/
+    
+    .navbar {
+        border-bottom: 5px solid #C68A02;
     }
     
     nav {
@@ -31,8 +38,6 @@
     .menu-area a {
         background-color: black;
         -webkit-transition: background-color 0.5s ease-out;
-        -moz-transition: background-color 0.5s ease-out;
-        -o-transition: background-color 0.5s ease-out;
         transition: background-color 0.5s ease-out;
         color: #fff;
         font-weight: 900;
@@ -48,8 +53,7 @@
     }
     
     .menu-area a:hover {
-        background: #C68A02;
-        color: #fff;
+        background-color: #C68A02;
     }
     
     .navbar .logo img {
@@ -61,7 +65,7 @@
         width: 100%;
         height: 50px;
         display: none;
-        background-color: #FAC710;
+        background-color: black;
         border-bottom: 3px solid black;
     }
     
@@ -69,6 +73,252 @@
         padding: 5px 10px;
         height: 100%;
     }
+    /* Fim do menu */
+    /* Inicio do Carrousel de imagem */
+    
+    .container-carousel {
+        width: 100%;
+        height: 500px;
+        border-right: 50px solid #FAC710;
+        border-left: 50px solid #FAC710;
+        border-top: 25px solid #fcd340;
+        border-bottom: 30px solid #fcd340;
+    }
+    
+    .mySlides {
+        display: none;
+        width: 100%;
+        height: 450px;
+    }
+    
+    .linha {
+        width: 100%;
+        height: 5px;
+        background-color: #C68A02;
+    }
+    /* Fim do Carroussel da imagem*/
+    /* Lista de imagem */
+    
+    .container-geral-lista {
+        width: 100%;
+        height: 510px;
+        background-color: #C68A02;
+        margin: auto;
+        border-top: 5px solid #C68A02;
+        border-bottom: 5px solid #C68A02;
+    }
+    
+    .container-lista {
+        width: 90%;
+        height: 500px;
+        background: #fcd340;
+        margin: auto;
+        border-radius: 100px;
+    }
+    
+    .container-lista .titulo {
+        width: 100%;
+        height: 100px;
+        padding-top: 1%;
+        border-radius: 100px 100px 0px 0px;
+        background-color: #FAC710;
+        text-align: center;
+        font-size: 25px;
+        color: black;
+        text-shadow: 1px 15px 5px #C68A02;
+    }
+    
+    .lista .botao-seta {
+        position: absolute;
+        margin: 125px 10px;
+        cursor: pointer;
+        display: left;
+        justify-content: center;
+    }
+    
+    .img-lista {
+        width: 18%;
+        height: 350px;
+        padding-top: 1%;
+        padding-left: 2%;
+        justify-content: center;
+        opacity: 1;
+        transition: 0.3s ease-in;
+    }
+    
+    .img-lista .fica {
+        display: left;
+    }
+    
+    .img-lista .cel-sumir {
+        display: left;
+    }
+    
+    .img-lista .tab-sumir {
+        display: left;
+    }
+    
+    .img-lista:hover {
+        opacity: 0.66;
+        transition: opacity 0.3s ease-out;
+        -webkit-transform: translateX(8px);
+        transform: translateX(8px);
+        cursor: pointer;
+    }
+    
+    .botao-seta {
+        width: 6%;
+        height: 10%;
+        padding: 0.3%;
+        background-color: #ff7700;
+        -webkit-transition: background-color 0.1s ease-out;
+        transition: background-color 0.1s ease-out;
+        border: 2px solid black;
+        border-radius: 100%;
+    }
+    
+    .botao-seta:hover {
+        background-color: rgb(116, 59, 9);
+    }
+    
+    .botao-seta img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .img-lista .tab-sumir {
+        display: left;
+    }
+    /* Fim da lista */
+    /* Parte forum e chat*/
+    
+    .container-geral-forum {
+        width: 100%;
+        height: 430px;
+        background-color: #C68A02;
+        margin: auto;
+        border-top: 5px solid #C68A02;
+        border-bottom: 5px solid #C68A02;
+    }
+    
+    .container-forum {
+        width: 90%;
+        height: 420px;
+        background: #fcd340;
+        margin: auto;
+        border-radius: 100px;
+    }
+    
+    .imagem-forum {
+        width: 50%;
+        padding: 1% 4%;
+        display: block;
+        float: left;
+    }
+    
+    .imagem-forum img {
+        width: 100%;
+        height: 350px;
+        border-radius: 510px;
+    }
+    
+    .texto-forum {
+        width: 50%;
+        padding: 4% 7%;
+        display: block;
+        float: left;
+        text-align: center;
+    }
+    
+    .texto-forum h1 {
+        background-color: #FAC710;
+        text-shadow: 1px 5px 5px #C68A02;
+        padding: 2% 10%;
+        border-radius: 10px;
+        margin-bottom: 10%;
+    }
+    
+    .texto-forum p {
+        margin-bottom: 10%;
+    }
+    
+    .texto-forum .botao-forum {
+        background-color: black;
+        border-radius: 10px;
+        border: 5px solid black;
+        color: white;
+        padding: 2% 7%;
+        cursor: pointer;
+    }
+    
+    .texto-forum .botao-forum:hover {
+        background-color: white;
+        border: 5px solid white;
+        color: #000000;
+    }
+    /* Fim parte chat e forum*/
+    /* Lista de filmes pagina*/
+    
+    .container-lista-grande {
+        width: 100%;
+        height: 1730px;
+        background-color: #C68A02;
+        margin: auto;
+        border-top: 5px solid #C68A02;
+        border-bottom: 5px solid #C68A02;
+    }
+    
+    .container-lista-grande .titulo {
+        width: 100%;
+        height: 100px;
+        padding-top: 1%;
+        border-radius: 100px 100px 0px 0px;
+        background-color: #FAC710;
+        text-align: center;
+        font-size: 25px;
+        color: black;
+        text-shadow: 1px 15px 5px #C68A02;
+    }
+    
+    .container-lista-filmes {
+        width: 90%;
+        height: 1720px;
+        background: #fcd340;
+        margin: auto;
+        border-radius: 100px;
+        text-align: center;
+    }
+    
+    .container-lista-filmes .botao-random {
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+        border: 5px solid black;
+        background-color: #ff7700;
+        -webkit-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+    
+    .container-lista-filmes .botao-random:hover {
+        background-color: #b35300;
+    }
+    
+    .container-lista-filmes .botao-random img {
+        width: 100%;
+        padding: 5px;
+    }
+    /* Fim lista de filmes pagina*/
+    /*Parte footer*/
+    
+    .footer {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(36, 37, 37);
+        color: white;
+        text-align: center;
+    }
+    /*Fim footer*/
     
     @media only screen and (max-width: 660px) {
         .navbar ._Menus-show {
@@ -89,4 +339,59 @@
         .navbar .icon-bar {
             display: block;
         }
+        .container-carousel {
+            height: 250px;
+        }
+        .mySlides {
+            height: 200px;
+        }
+        .img-lista {
+            width: 45% !important;
+        }
+        .cel-some {
+            display: none;
+        }
+        .texto-forum {
+            float: none;
+            width: 100%;
+        }
+        .imagem-forum {
+            float: none;
+            width: 100%;
+        }
+        .container-geral-forum {
+            width: 100%;
+            height: 760px;
+        }
+        .container-forum {
+            width: 90%;
+            height: 740px;
+        }
+    }
+    
+    @media only screen and (max-width: 880px) {
+        .img-lista {
+            width: 22%;
+        }
+        .tab-sumir {
+            display: none;
+        }
+    }
+    
+    @media only screen and (min-width: 1500px) {
+        .container-carousel {
+            height: 600px;
+        }
+        .mySlides {
+            height: 545px;
+        }
+        .img-lista .sumir {
+            display: left;
+        }
+    }
+    
+    .espaco {
+        width: 100%;
+        height: 1000px;
+        background-color: black;
     }
