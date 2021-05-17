@@ -308,6 +308,171 @@
         padding: 5px;
     }
     /* Fim lista de filmes pagina*/
+    /* Pagina sobre*/
+    
+    .container-sobre {
+        width: 95%;
+        height: 1050px;
+        padding-top: 30px;
+        margin: auto;
+    }
+    
+    .container-geral-sobre {
+        background-color: #FAC710;
+        border-radius: 0px 0px 100px 100px;
+    }
+    
+    .container-sobre .titulo {
+        width: 100%;
+        height: 100px;
+        padding-top: 1%;
+        border-radius: 100px 100px 0px 0px;
+        background-color: #FAC710;
+        text-align: center;
+        font-size: 25px;
+        color: black;
+        text-shadow: 1px 15px 5px #C68A02;
+    }
+    
+    .botoes-redes {
+        width: 100%;
+        height: 160px;
+        padding: 5%;
+    }
+    
+    .redes-sociais {
+        border: 5px solid black;
+        background-color: #FAC710;
+        width: 20%;
+        height: 85%;
+        border-radius: 100%;
+        float: left;
+        margin: 0% 5%;
+    }
+    
+    .redes-sociais:hover {
+        background-color: #C68A02;
+    }
+    
+    .redes-sociais img {
+        width: 90%;
+        height: 90%;
+    }
+    /* Fim pagina sobre*/
+    /* Início formulário login */
+    
+    .login-background {
+        background-image: url("../img/background-login.jpg");
+        background-size: 100%;
+    }
+    
+    .formularioCadastro .container-login {
+        width: 80%;
+        margin: auto;
+        background-color: rgba(240, 164, 0, 0.7);
+        border-radius: 10px;
+        margin-bottom: 100px;
+        text-align: center;
+    }
+    
+    .formularioCadastro .container-login h1 {
+        background-color: #b35300;
+        border-radius: 10px 10px 0px 0px;
+    }
+    
+    .formularioLogin {
+        width: 40%;
+        margin: 10px auto;
+        display: block;
+        background-color: rgba(240, 164, 0, 0.7);
+        margin-top: 10%;
+        margin-bottom: 100px;
+        border-radius: 20px;
+        box-shadow: 6px 6px #b35300;
+        padding: 20px;
+    }
+    
+    .areaBtnLogin span {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .areaBtnLogin span:hover {
+        color: rgb(27, 27, 27);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    
+    .form-input:hover {
+        border-color: yellow;
+        transition: 0.7s;
+    }
+    
+    .form-input {
+        display: block;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        height: 30px;
+        padding-left: 10px;
+        /* border:solid 2px rgb(27, 196, 27); */
+        border-radius: 8px;
+    }
+    
+    .formularioLogin input {
+        margin-bottom: 5%;
+    }
+    
+    .form-meio {
+        margin: 0% 5%;
+        margin-top: 10px;
+        height: 30px;
+        border-radius: 8px;
+        width: 39.0%;
+        display: left;
+    }
+    
+    .areaBtnLogin {
+        padding: 15px;
+        text-align: center;
+        align-items: center;
+    }
+    
+    .btnLoginEntrar {
+        margin: 0px 50px;
+        padding: 10px 50px;
+        background-color: #ff7700;
+        border: none;
+        border-radius: 5px;
+        color: black;
+        cursor: pointer;
+    }
+    
+    .divBtnCadastro .botaoCadastro {
+        background-color: #b35300;
+        font-weight: 600;
+        border: 2px solid black;
+        border-radius: 5px;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        -webkit-transition: background-color 0.5s ease-out;
+        transition: background-color 0.5s ease-out;
+    }
+    
+    .tituloCadastro {
+        background-color: #ff7700;
+        padding: 15px 0px;
+        text-shadow: 2px 6px 6px #7e3d04;
+    }
+    
+    .divBtnCadastro .botaoCadastro:hover {
+        background-color: #ff7700;
+    }
+    
+    .btnLoginEntrar:hover {
+        background-color: #b35300;
+    }
+    /* Fim formulário login */
     /*Parte footer*/
     
     .footer {
@@ -366,6 +531,9 @@
         .container-forum {
             width: 90%;
             height: 740px;
+        }
+        .container-sobre {
+            height: 1650px;
         }
     }
     

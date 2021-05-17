@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/icone.png">
+    <title>Login</title>
+</head>
+
+<body class="login-background" onchange="myFunction()">
+    <div class="navbar">
+        <div class="icon-bar">
+            <img class="button-menu" style="cursor: pointer;" onclick="Show()" src="./img/menu.png">
+            <img class="button-menu" src="./img/logo.png">
+
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+            </div>
+            <ul class="menu-area" id="nav-lists" value="0">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Chat</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <form class="formularioLogin">
+        <div class="container-login">
+            <h1>Login</h1>
+            <input class="form-input" id="inputLogin" placeholder="Login">
+            <input class="form-input" id="inputSenhaLogin" placeholder="Senha" type="password">
+
+            <div class="areaBtnLogin">
+                <span>Não tem cadastro?</span> &nbsp;
+                <button class="btnLoginEntrar" onfocus="logar()" id="btnLoginEntrar">Entrar</button>
+            </div>
+        </div>
+    </form>
+
+</body>
+<script src="./js/main.js"></script>
+<script>
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            navList.classList.add("_Menus-show");
+            navList.value = 1;
+        } else {
+            navList.classList.remove("_Menus-show");
+            navList.value = 0;
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 660px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+</script>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/icone.png">
+    <title>Sobre nós</title>
+</head>
+
+<body onchange="myFunction()">
+    <div class="navbar">
+        <div class="icon-bar">
+            <img class="button-menu" style="cursor: pointer;" onclick="Show()" src="./img/menu.png">
+            <img class="button-menu" src="./img/logo.png">
+
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="./img/logo.png" alt="logo">
+            </div>
+            <ul class="menu-area" id="nav-lists" value="0">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Filmes</a></li>
+                <li><a href="#">Chat</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <div class="container-sobre">
+        <div class="titulo">
+            <h1>Sobre nós</h1>
+        </div>
+        <div class="container-geral-sobre">
+            <div class="container-forum">
+                <div class="texto-forum">
+                    <h1>Um pouco da criação do site</h1>
+                    <p>Comecei a fazer o site pois sou um fã de filmes antigos e acho que o filme consegue mostrar o que o diretor pensa sobre a cultura que o filme está inserido...
+                    </p>
+                </div>
+                <div class="imagem-forum">
+                    <img src="./img/sobre-pagina.jpg">
+                </div>
+            </div>
+            <br>
+            <div class="container-forum">
+                <div class="imagem-forum">
+                    <img src="./img/redes-sociais.jpg">
+                </div>
+                <div class="texto-forum">
+                    <h1>Minhas Redes Sociais</h1>
+                    <div class="botoes-redes">
+                        <button class="redes-sociais"><img src="./img/git.png"></button>
+                        <button class="redes-sociais"><img src="./img/git.png"></button>
+                        <button class="redes-sociais"><img src="./img/git.png"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <br>
+        <br>
+        <p>Filme Véio © 2021. Todos direitos reservados.</p>
+        <br>
+        <br>
+    </div>
+</body>
+<script src="./js/main.js"></script>
+<script>
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            navList.classList.add("_Menus-show");
+            navList.value = 1;
+        } else {
+            navList.classList.remove("_Menus-show");
+            navList.value = 0;
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 660px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+</script>
+
+</html>
