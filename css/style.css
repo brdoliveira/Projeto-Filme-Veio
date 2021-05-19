@@ -8,6 +8,10 @@
     body {
         background-color: black;
     }
+    
+    a {
+        text-decoration: none;
+    }
     /* Menu Responsivo*/
     
     .navbar {
@@ -246,9 +250,16 @@
         background-color: black;
         border-radius: 10px;
         border: 5px solid black;
-        color: white;
         padding: 2% 7%;
         cursor: pointer;
+    }
+    
+    .botao-forum a {
+        color: white;
+    }
+    
+    .botao-forum a:hover {
+        color: black;
     }
     
     .texto-forum .botao-forum:hover {
@@ -397,6 +408,10 @@
         cursor: pointer;
     }
     
+    .areaBtnLogin a {
+        color: black;
+    }
+    
     .areaBtnLogin span:hover {
         color: rgb(27, 27, 27);
         text-decoration: underline;
@@ -433,14 +448,14 @@
     }
     
     .areaBtnLogin {
-        padding: 15px;
+        padding: 1%;
         text-align: center;
         align-items: center;
     }
     
     .btnLoginEntrar {
         margin: 0px 50px;
-        padding: 10px 50px;
+        padding: 1% 10%;
         background-color: #ff7700;
         border: none;
         border-radius: 5px;
@@ -473,12 +488,70 @@
         background-color: #b35300;
     }
     /* Fim formulário login */
+    /*Parte Filme Individual*/
+    
+    .container-individual {
+        width: 80%;
+        height: 700px;
+        background-color: white;
+        margin: auto;
+        border: 5px solid gray;
+        border-radius: 20px;
+    }
+    
+    .filme-poster {
+        width: 50%;
+        height: 100%;
+        padding: 5%;
+        margin: auto;
+        float: left;
+    }
+    
+    .filme-poster img {
+        margin: 10% 10%;
+        width: 80%;
+        height: 90%;
+    }
+    
+    .informacoes {
+        width: 50%;
+        height: 100%;
+        border-radius: 15px;
+        float: left;
+        background-color: lightgray;
+        text-align: center;
+    }
+    
+    .informacoes .nomedofilme {
+        background-color: gray;
+        height: 80px;
+        padding: 2.5% 0%;
+        border-left: 10px solid gray;
+        border-bottom: 10px solid gray;
+        border-radius: 0px 10px;
+    }
+    
+    .nomedofilme {
+        width: 100%;
+        font-size: 100%;
+        color: white;
+        text-shadow: 3px 3px black;
+    }
+    
+    .informacoes .detalhes {
+        width: 80%;
+        font-size: 150%;
+        text-align: justify;
+        padding: 2.5%;
+    }
+    /*Filme Filme Individual*/
     /*Parte footer*/
     
     .footer {
         left: 0;
         bottom: 0;
         width: 100%;
+        position: fixed;
         background-color: rgb(36, 37, 37);
         color: white;
         text-align: center;
@@ -544,6 +617,25 @@
         .tab-sumir {
             display: none;
         }
+        .filme-poster {
+            width: 100%;
+            display: block;
+            float: initial;
+            border-radius: 0px;
+        }
+        .informacoes {
+            width: 100%;
+            display: block;
+            float: initial;
+            border-radius: 0px;
+        }
+        .informacoes .nomedofilme {
+            border-radius: 0px;
+        }
+        .container-individual {
+            margin-bottom: 800px;
+            border-radius: 0px;
+        }
     }
     
     @media only screen and (min-width: 1500px) {
@@ -556,10 +648,4 @@
         .img-lista .sumir {
             display: left;
         }
-    }
-    
-    .espaco {
-        width: 100%;
-        height: 1000px;
-        background-color: black;
     }

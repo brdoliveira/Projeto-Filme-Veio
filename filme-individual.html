@@ -7,38 +7,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/icone.png">
-    <title>Cadastro</title>
+    <title>Filme Individual</title>
 </head>
 
 <body class="login-background" onchange="myFunction()">
     <div class="navbar">
         <div class="icon-bar">
             <img class="button-menu" style="cursor: pointer;" onclick="Show()" src="./img/menu.png">
-            <img class="button-menu" src="./img/logo.png">
+            <a href="./index.html"><img class="button-menu" src="./img/logo.png"></a>
 
         </div>
         <nav>
             <div class="logo">
-                <img src="./img/logo.png" alt="logo">
+                <a href="./index.html"><img src="./img/logo.png" alt="logo"></a>
             </div>
             <ul class="menu-area" id="nav-lists" value="0">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Filmes</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./lista.html">Filmes</a></li>
+                <li><a href="./forum.html">Chat</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
     </div>
     <br>
     <div class="container-individual">
         <div class="filme-poster">
-            <img src="#">
+            <img src="./img/poster/mean-streets.jpg">
         </div>
         <div class="informacoes">
-            <h1 class="nomedofilme">xxxxx xx xxxxx</h1>
-            <p class="detalhes"></p>
+            <h1 class="nomedofilme"></h1>
+            <br>
+            <div class="detalhes"></div>
+            <br>
         </div>
+    </div>
+    <br>
+    <br>
+    <div class="espaco"></div>
+    <div class="footer">
+        <br>
+        <br>
+        <p>Filme Véio © 2021. Todos direitos reservados.</p>
+        <br>
+        <br>
     </div>
 </body>
 <script src="./js/main.js"></script>

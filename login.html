@@ -14,19 +14,20 @@
     <div class="navbar">
         <div class="icon-bar">
             <img class="button-menu" style="cursor: pointer;" onclick="Show()" src="./img/menu.png">
-            <img class="button-menu" src="./img/logo.png">
+            <a href="./index.html"><img class="button-menu" src="./img/logo.png"></a>
+
 
         </div>
         <nav>
             <div class="logo">
-                <img src="./img/logo.png" alt="logo">
+                <a href="./index.html"><img src="./img/logo.png" alt="logo"></a>
             </div>
             <ul class="menu-area" id="nav-lists" value="0">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Filmes</a></li>
-                <li><a href="#">Chat</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./lista.html">Filmes</a></li>
+                <li><a href="./forum.html">Chat</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./login.html">Login</a></li>
             </ul>
         </nav>
     </div>
@@ -38,12 +39,18 @@
             <input class="form-input" id="inputSenhaLogin" placeholder="Senha" type="password">
 
             <div class="areaBtnLogin">
-                <span>Não tem cadastro?</span> &nbsp;
+                <span><a href="./cadastro.html">Não tem cadastro?</a></a><span> &nbsp;
                 <button class="btnLoginEntrar" onfocus="logar()" id="btnLoginEntrar">Entrar</button>
             </div>
         </div>
     </form>
-
+    <div class="footer">
+        <br>
+        <br>
+        <p>Filme Véio © 2021. Todos direitos reservados.</p>
+        <br>
+        <br>
+    </div>
 </body>
 <script src="./js/main.js"></script>
 <script>
