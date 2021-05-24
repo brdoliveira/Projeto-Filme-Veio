@@ -34,21 +34,21 @@
     <br>
     <br><br><br><br>
     <!-- Inicío formulário -->
-    <form class="formularioCadastro">
+    <form class="formularioCadastro" method="POST" id="form_cadastro">
         <div class="container-login">
             <h1 class="tituloCadastro">Cadastro</h1>
             <!-- informações da empresa -->
-            <h2 class="tituloCadastro">Informações da Empresa</h2>
-            <input class="form-input" id="inputNome" placeholder="Nome" onkeyup="validacao_nome()" required>
-            <input class="form-meio" id="inputTelefone" placeholder="Telefone (somente números)" onkeyup="validacao_telefone()" required>
-            <input type="date" class="form-meio" id="inputDataNasc" placeholder="Data de Nascimento" onkeyup="validacao_data()" required>
+            <h2 class="tituloCadastro">Informações do Usuario</h2>
+            <input class="form-input" name="nome" placeholder="Nome" maxlength="60" required>
+            <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" maxlength="12" required>
+            <input type="date" class="form-meio" name="dataNasc" placeholder="Data de Nascimento" required>
             <br>
             <br>
             <!-- informações da conta -->
             <h2 class="tituloCadastro">Informações da conta</h2>
-            <input class="form-input" id="inputLogin" placeholder="Login Desejado" onkeyup="validacao_login()" required>
-            <input type="password" class="form-meio" id="inputSenha" placeholder="Senha" onkeyup="validacao_senha()" required>
-            <input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" onkeyup="validacao_confirma_senha()" required>
+            <input class="form-input" name="login" placeholder="Login Desejado" maxlength="16" required>
+            <input type="password" class="form-meio" name="senha" placeholder="Senha" maxlength="16" required>
+            <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" required >-->
             <br>
             <br>
             <div class="divBtnCadastro">
@@ -72,6 +72,30 @@
     var x = window.matchMedia("(max-width: 660px)")
     myFunction(x) // Call listener function at run time
     x.addListener(myFunction) // Attach listener function on state changes
+
+    function cadastrar() {
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function(response) {
+
+            if (response.ok) {
+
+                window.location.href = 'login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                //response.text().then(function(resposta) {
+                //  boxAlert.innerHTML = resposta;
+                // });
+                // finalizar_aguardar();
+            }
+        });
+
+        // return false;
+    }
 </script>
 
 </html>

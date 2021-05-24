@@ -32,15 +32,15 @@
         </nav>
     </div>
     <br>
-    <form class="formularioLogin">
+    <form id="form_login" method="post" class="formularioLogin" onsubmit="return entrar()">
         <div class="container-login">
             <h1>Login</h1>
-            <input class="form-input" id="inputLogin" placeholder="Login">
-            <input class="form-input" id="inputSenhaLogin" placeholder="Senha" type="password">
+            <input class="form-input" id="inputLogin" name="login" placeholder="Login">
+            <input class="form-input" id="inputSenhaLogin" name="senha" placeholder="Senha" type="password">
 
             <div class="areaBtnLogin">
                 <span><a href="./cadastro.html">Não tem cadastro?</a></a><span> &nbsp;
-                <button class="btnLoginEntrar" onfocus="logar()" id="btnLoginEntrar">Entrar</button>
+                <button class="btnLoginEntrar" id="btnLoginEntrar">Entrar</button>
             </div>
         </div>
     </form>
@@ -67,6 +67,36 @@
     var x = window.matchMedia("(max-width: 660px)")
     myFunction(x) // Call listener function at run time
     x.addListener(myFunction) // Attach listener function on state changes
+
+    function entrar() {
+        var formulario = new URLSearchParams(new FormData(form_login));
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(resposta => {
+
+            if (resposta.ok) {
+
+                resposta.json().then(json => {
+
+                    sessionStorage.login_usuario_meuapp = json.login;
+                    sessionStorage.nome_usuario_meuapp = json.nome;
+                    window.location.href = 'index.html';
+                });
+
+            } else {
+
+                console.log('Erro de login!');
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+        });
+
+        return false;
+    }
+
 </script>
 
 </html>
