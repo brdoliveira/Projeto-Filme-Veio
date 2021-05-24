@@ -33,9 +33,10 @@
     </div>
 
     <div class="container-carousel">
-        <img class="mySlides" src="./img/img-cont-1.jpg">
-        <img class="mySlides" src="./img/img-cont-2.jpg">
-        <img class="mySlides" src="./img/img-cont-3.png">
+        <img class="mySlides" src="./img/1.png">
+        <img class="mySlides" src="./img/2.png">
+        <img class="mySlides" src="./img/3.png">
+        <img class="mySlides" src="./img/4.png">
     </div>
     <div class="linha"></div>
     <br>
@@ -45,11 +46,11 @@
                 <h1>Lista de Filmes...</h1>
             </div>
             <div class="lista">
-                <img class="img-lista fica" src="./img/poster/goodfellas.jpg">
-                <img class="img-lista fica" src="./img/poster/mean-streets.jpg">
-                <img class="img-lista cel-some" src="./img/poster/once-upon-a-time-in-america.jpg">
-                <img class="img-lista cel-some" src="./img/poster/pulp-fiction.jpg">
-                <img class="img-lista tab-sumir" src="./img/poster/the-departed.jpg">
+                <img class="img-lista fica" id="0" onclick="filme_individual()" src="https://m.media-amazon.com/images/M/MV5BNTZjNzgzZDktNjA1My00MzkwLTgwZTEtMjBkOTcxM2RmMDZjXkEyXkFqcGdeQXVyNzMwOTY2NTI@._V1_SX300.jpg" alt="tt0074877">
+                <img class="img-lista fica" id="1" src="https://m.media-amazon.com/images/M/MV5BYTkzZjkwZGItY2IwYi00Yzg0LTliMjktY2U3ZWZhNTg2OTI3XkEyXkFqcGdeQXVyNjE5MjUyOTM@._V1_SX300.jpg" alt="tt0031108">
+                <img class="img-lista cel-some" id="2" src="https://m.media-amazon.com/images/M/MV5BNjJhY2ExYWYtNTExOS00NjZjLWEzMDItYmEzZWZlNmQ3Zjk2XkEyXkFqcGdeQXVyNzc5MjA3OA@@._V1_SX300.jpg" alt="tt0061613">
+                <img class="img-lista cel-some" id="3" src="https://m.media-amazon.com/images/M/MV5BYTdiNjllZGQtOGY4YS00NTljLWFhNzItYjE3OWE5NjUzZTM4XkEyXkFqcGdeQXVyMTQ2MjQyNDc@._V1_SX300.jpg" alt="tt0068911">
+                <img class="img-lista tab-sumir" id="4" src="https://m.media-amazon.com/images/M/MV5BMTMzNDMxMjc0M15BMl5BanBnXkFtZTcwNDYyODI5Ng@@._V1_SX300.jpg" alt="tt0050152">
                 <button class="botao-seta"><a href="./lista.html"><img src="./img/seta.png"></a></button>
             </div>
         </div>
@@ -100,6 +101,49 @@
 </body>
 <script src="./js/main.js"></script>
 <script>
+    'use strict';
+    window.onload = pesquisar_filme;
+    let id_filme = " ";
+    let id_title = " ";
+    let id_src = " ";
+
+    function gerar_numero() {
+        var numero_random = Math.floor(Math.random() * 100000)
+        for (var contador = String(numero_random).length; contador < 7; contador++) {
+            numero_random = '0' + numero_random;
+        }
+        id_filme = 'tt' + numero_random;
+    }
+
+    async function pesquisar_filme() {
+        var cont = 0;
+        while (cont < 5) {
+            var imagem_loop = document.getElementById(`${cont}`);
+            gerar_numero();
+            //let api_key = '9b975cfc'
+            let api_key = 'e0620bd4';
+            const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id_filme}`;
+            const data = await fetch(url);
+            const response = await data.json();
+            const poster = response.Poster;
+            const imdb = response.imdbID;
+            if (poster == 'N/A') {
+                cont--
+            } else {
+                imagem_loop.src = `${poster}`;
+                imagem_loop.alt = `${imdb}`;
+            }
+            cont++
+        }
+    }
+
+    function filme_individual() {
+        var id_filme_individual = document.getElementById(0);
+        id_title = id_filme_individual.alt;
+        id_src = id_filme_individual.src;
+        window.location.href = `./filme-individual.html?id=${id_title}`;
+    }
+
     function myFunction(x) {
         if (x.matches) { // If media query matches
             navList.classList.add("_Menus-show");

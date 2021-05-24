@@ -33,12 +33,12 @@
     <br>
     <div class="container-individual">
         <div class="filme-poster">
-            <img src="./img/poster/mean-streets.jpg">
+            <img id="filme-poster" src="./img/poster/mean-streets.jpg">
         </div>
         <div class="informacoes">
-            <h1 class="nomedofilme"></h1>
+            <h1 class="nomedofilme" id="filme-titulo"></h1>
             <br>
-            <div class="detalhes"></div>
+            <div class="detalhes" id="filme-detalhes"></div>
             <br>
         </div>
     </div>
@@ -55,6 +55,55 @@
 </body>
 <script src="./js/main.js"></script>
 <script>
+    'use strict';
+    window.onload = mostrar_filme;
+
+    async function mostrar_filme() {
+        let params = new URLSearchParams(document.location.search.substring(1));
+        let id_filme = params.get("id")
+        var poster_filme = document.getElementById(`filme-poster`);
+        var titulo_filme = document.getElementById(`filme-titulo`);
+        var detalhes_filme = document.getElementById(`filme-detalhes`);
+        //let api_key = '9b975cfc'
+        let api_key = 'e0620bd4';
+        const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id_filme}`;
+        console.log(url)
+        const data = await fetch(url);
+        const response = await data.json();
+        console.log(response)
+        const poster = response.Poster;
+        const title = response.Title;
+        const Year = response.Year;
+        const Released = response.Released;
+        const Country = response.Country;
+        const Language = response.Language;
+        const Runtime = response.Runtime;
+        const Actors = response.Actors;
+        const Genre = response.Genre;
+        const Director = response.Director;
+        const Writer = response.Writer;
+        const Plot = response.Plot;
+        const imdbRating = response.imdbRating;
+        const imdbVotes = response.imdbVotes;
+        const imdb = response.imdbID;
+        poster_filme.src = `${poster}`;
+        poster_filme.alt = `${imdb}`;
+        titulo_filme.innerHTML = `${title}`
+        detalhes_filme.innerHTML = `Ano:    ${Year}<br>
+                                    Lançado:    ${Released}<br>
+                                    Pais de Origem: ${Country}<br>
+                                    Lingua: ${Language} <br>
+                                    Tempo de Filme: ${Runtime}<br>
+                                    Genero: ${Genre}<br>
+                                    Diretor: ${Director}<br>
+                                    Escritor: ${Writer}<br>
+                                    Atores: ${Actors}<br>
+                                    Resumo: ${Plot}<br><br>
+                                    Nota do Filme(IMDB): ${imdbRating}<br>
+                                    Quantidade de votos(IMDB): ${imdbVotes}`
+
+    }
+
     function myFunction(x) {
         if (x.matches) { // If media query matches
             navList.classList.add("_Menus-show");
