@@ -33,10 +33,12 @@
     <br>
     <div class="container-individual">
         <div class="filme-poster">
-            <img id="filme-poster" src="./img/poster/mean-streets.jpg">
+            <img id="filme-poster" src="">
         </div>
         <div class="informacoes">
-            <h1 class="nomedofilme" id="filme-titulo"></h1>
+            <div class="nomedofilme">
+                <h1 id="filme-titulo"></h1>
+            </div>
             <br>
             <div class="detalhes" id="filme-detalhes"></div>
             <br>
@@ -45,13 +47,7 @@
     <br>
     <br>
     <div class="espaco"></div>
-    <div class="footer">
-        <br>
-        <br>
-        <p>Filme Véio © 2021. Todos direitos reservados.</p>
-        <br>
-        <br>
-    </div>
+
 </body>
 <script src="./js/main.js"></script>
 <script>
@@ -64,8 +60,8 @@
         var poster_filme = document.getElementById(`filme-poster`);
         var titulo_filme = document.getElementById(`filme-titulo`);
         var detalhes_filme = document.getElementById(`filme-detalhes`);
-        //let api_key = '9b975cfc'
-        let api_key = 'e0620bd4';
+        let api_key = '9b975cfc'
+            //let api_key = 'e0620bd4';
         const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id_filme}`;
         console.log(url)
         const data = await fetch(url);
@@ -88,19 +84,20 @@
         const imdb = response.imdbID;
         poster_filme.src = `${poster}`;
         poster_filme.alt = `${imdb}`;
-        titulo_filme.innerHTML = `${title}`
-        detalhes_filme.innerHTML = `Ano:    ${Year}<br>
-                                    Lançado:    ${Released}<br>
-                                    Pais de Origem: ${Country}<br>
-                                    Lingua: ${Language} <br>
-                                    Tempo de Filme: ${Runtime}<br>
-                                    Genero: ${Genre}<br>
-                                    Diretor: ${Director}<br>
-                                    Escritor: ${Writer}<br>
-                                    Atores: ${Actors}<br>
-                                    Resumo: ${Plot}<br><br>
-                                    Nota do Filme(IMDB): ${imdbRating}<br>
-                                    Quantidade de votos(IMDB): ${imdbVotes}`
+        titulo_filme.innerHTML = `${title}`;
+        document.title = `${title}`;
+        detalhes_filme.innerHTML = `<span class="info">Ano: </span> ${Year}<br>
+                                    <span class="info">Lançado: </span>  ${Released}<br>
+                                    <span class="info"> Pais de Origem: </span> ${Country}<br>
+                                    <span class="info"> Lingua: </span> ${Language} <br>
+                                    <span class="info">Tempo de Filme: </span> ${Runtime}<br>
+                                    <span class="info"> Genero: </span> ${Genre}<br>
+                                    <span class="info">Diretor: </span> ${Director}<br>
+                                    <span class="info">Escritor: </span> ${Writer}<br>
+                                    <span class="info">Atores: </span> ${Actors}<br>
+                                    <span class="info">Resumo: </span>${Plot}<br><br>
+                                    <span class="info">Nota do Filme(IMDB): </span> ${imdbRating}<br>
+                                    <span class="info">Quantidade de votos(IMDB): </span> ${imdbVotes}`
 
     }
 

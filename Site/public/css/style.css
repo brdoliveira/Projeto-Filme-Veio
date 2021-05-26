@@ -535,9 +535,13 @@
         text-shadow: 3px 3px black;
     }
     
+    .info {
+        font-weight: bold;
+    }
+    
     .informacoes .detalhes {
         width: 80%;
-        font-size: 150%;
+        font-size: 100%;
         text-align: justify;
         padding: 2.5%;
     }
