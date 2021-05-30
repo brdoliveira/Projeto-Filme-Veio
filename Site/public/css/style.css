@@ -1,652 +1,800 @@
-    * {
-        margin: 0;
-        padding: 0;
-        outline: 0;
-        box-sizing: border-box;
-    }
-    
-    body {
-        background-color: black;
-    }
-    
-    a {
-        text-decoration: none;
-    }
-    /* Menu Responsivo*/
-    
-    .navbar {
-        border-bottom: 5px solid darkorange;
-    }
-    
-    nav {
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
-        background: #000000;
-        z-index: 1;
-        text-align: right;
-    }
-    
-    .logo {
-        width: 15%;
-        float: left;
-        text-align: left;
-        padding: 5px 25px;
-    }
-    
-    .menu-area li {
-        display: inline-block;
-        list-style-type: none;
-    }
-    
-    .menu-area a {
-        background-color: black;
-        -webkit-transition: background-color 0.5s ease-out;
-        transition: background-color 0.5s ease-out;
-        color: #fff;
-        font-weight: 900;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        display: block;
-        padding: 15px 30px;
-        font-size: 75%;
-        line-height: 30px;
-        position: relative;
-        z-index: 1;
-        text-decoration: none;
-    }
-    
-    .menu-area a:hover {
-        background-color: #C68A02;
-    }
-    
-    .navbar .logo img {
-        max-width: 100px;
-        max-height: 10%;
-    }
-    
-    .navbar .icon-bar {
-        width: 100%;
-        height: 50px;
-        display: none;
-        background-color: black;
-        border-bottom: 3px solid black;
-    }
-    
-    .navbar .button-menu {
-        padding: 5px 10px;
-        height: 100%;
-    }
-    /* Fim do menu */
-    /* Inicio do Carrousel de imagem */
-    
-    .container-carousel {
-        width: 100%;
-        height: 500px;
-        border-right: 50px solid darkorange;
-        border-left: 50px solid darkorange;
-        border-top: 25px solid darkorange;
-        border-bottom: 30px solid darkorange;
-    }
-    
-    .mySlides {
-        display: none;
-        width: 100%;
-        height: 450px;
-    }
-    
-    .linha {
-        width: 100%;
-        height: 5px;
-        background-color: darkorange;
-    }
-    /* Fim do Carroussel da imagem*/
-    /* Lista de imagem */
-    
-    .container-geral-lista {
-        width: 100%;
-        height: 510px;
-        background-color: #C68A02;
-        margin: auto;
-        border-top: 5px solid #C68A02;
-        border-bottom: 5px solid #C68A02;
-    }
-    
-    .container-lista {
-        width: 90%;
-        height: 500px;
-        background: #fcd340;
-        margin: auto;
-        border-radius: 100px;
-    }
-    
-    .container-lista .titulo {
-        width: 100%;
-        height: 100px;
-        padding-top: 1%;
-        border-radius: 100px 100px 0px 0px;
-        background-color: #FAC710;
-        text-align: center;
-        font-size: 25px;
-        color: black;
-        text-shadow: 1px 15px 5px #C68A02;
-    }
-    
-    .lista .botao-seta {
-        position: absolute;
-        margin: 125px 10px;
-        cursor: pointer;
-        display: left;
-        justify-content: center;
-    }
-    
-    .img-lista {
-        width: 18%;
-        height: 350px;
-        padding-top: 1%;
-        padding-left: 2%;
-        justify-content: center;
-        opacity: 1;
-        transition: 0.3s ease-in;
-    }
-    
-    .img-lista .fica {
-        display: left;
-    }
-    
-    .img-lista .cel-sumir {
-        display: left;
-    }
-    
-    .img-lista .tab-sumir {
-        display: left;
-    }
-    
-    .img-lista:hover {
-        opacity: 0.66;
-        transition: opacity 0.3s ease-out;
-        -webkit-transform: translateX(8px);
-        transform: translateX(8px);
-        cursor: pointer;
-    }
-    
-    .botao-seta {
-        width: 6%;
-        height: 10%;
-        padding: 0.3%;
-        background-color: #ff7700;
-        -webkit-transition: background-color 0.1s ease-out;
-        transition: background-color 0.1s ease-out;
-        border: 2px solid black;
-        border-radius: 100%;
-    }
-    
-    .botao-seta:hover {
-        background-color: rgb(116, 59, 9);
-    }
-    
-    .botao-seta img {
-        width: 100%;
-        height: 100%;
-    }
-    
-    .img-lista .tab-sumir {
-        display: left;
-    }
-    /* Fim da lista */
-    /* Parte forum e chat*/
-    
-    .container-geral-forum {
-        width: 100%;
-        height: 430px;
-        background-color: darkgoldenrod;
-        margin: auto;
-        border-top: 5px solid darkgoldenrod;
-        border-bottom: 5px solid darkgoldenrod;
-    }
-    
-    .container-forum {
-        width: 90%;
-        height: 420px;
-        background: #fcd340;
-        margin: auto;
-        border-radius: 100px;
-    }
-    
-    .imagem-forum {
-        width: 50%;
-        padding: 1% 4%;
-        display: block;
-        float: left;
-    }
-    
-    .imagem-forum img {
-        width: 100%;
-        height: 350px;
-        border-radius: 510px;
-    }
-    
-    .texto-forum {
-        width: 50%;
-        padding: 4% 7%;
-        display: block;
-        float: left;
-        text-align: center;
-    }
-    
-    .texto-forum h1 {
-        background-color: #FAC710;
-        text-shadow: 1px 5px 5px #C68A02;
-        padding: 2% 10%;
-        border-radius: 10px;
-        margin-bottom: 10%;
-    }
-    
-    .texto-forum p {
-        margin-bottom: 10%;
-    }
-    
-    .texto-forum .botao-forum {
-        background-color: black;
-        border-radius: 10px;
-        border: 5px solid black;
-        padding: 2% 7%;
-        cursor: pointer;
-    }
-    
-    .botao-forum a {
-        color: orangered;
-    }
-    
-    .texto-forum .botao-forum:hover {
-        background-color: orange;
-        border: 5px solid orangered;
-        color: red;
-    }
-    /* Fim parte chat e forum*/
-    /* Lista de filmes pagina*/
-    
-    .container-lista-grande {
-        width: 100%;
-        height: 1730px;
-        background-color: #C68A02;
-        margin: auto;
-        border-top: 5px solid #C68A02;
-        border-bottom: 5px solid #C68A02;
-    }
-    
-    .container-lista-grande .titulo {
-        width: 100%;
-        height: 100px;
-        padding-top: 1%;
-        border-radius: 100px 100px 0px 0px;
-        background-color: #FAC710;
-        text-align: center;
-        font-size: 25px;
-        color: black;
-        text-shadow: 1px 15px 5px #C68A02;
-    }
-    
-    .container-lista-filmes {
-        width: 90%;
-        height: 1720px;
-        background: #fcd340;
-        margin: auto;
-        border-radius: 100px;
-        text-align: center;
-    }
-    
-    .container-lista-filmes .botao-random {
-        width: 100px;
-        height: 100px;
-        border-radius: 50px;
-        border: 5px solid black;
-        background-color: #ff7700;
-        cursor: pointer;
-        -webkit-transition: background-color 0.5s ease-out;
-        transition: background-color 0.5s ease-out;
-    }
-    
-    .container-lista-filmes .botao-random:hover {
-        background-color: #b35300;
-    }
-    
-    .container-lista-filmes .botao-random img {
-        width: 100%;
-        padding: 5px;
-    }
-    /* Fim lista de filmes pagina*/
-    /* Pagina sobre*/
-    
-    .container-sobre {
-        width: 95%;
-        height: 1050px;
-        padding-top: 30px;
-        margin: auto;
-    }
-    
-    .container-geral-sobre {
-        background-color: #FAC710;
-        border-radius: 0px 0px 100px 100px;
-    }
-    
-    .container-sobre .titulo {
-        width: 100%;
-        height: 100px;
-        padding-top: 1%;
-        border-radius: 100px 100px 0px 0px;
-        background-color: #FAC710;
-        text-align: center;
-        font-size: 25px;
-        color: black;
-        text-shadow: 1px 15px 5px #C68A02;
-    }
-    
-    .botoes-redes {
-        width: 100%;
-        height: 160px;
-        padding: 5%;
-    }
-    
-    .redes-sociais {
-        border: 5px solid black;
-        background-color: #FAC710;
-        width: 20%;
-        height: 85%;
-        border-radius: 100%;
-        float: left;
-        margin: 0% 5%;
-    }
-    
-    .redes-sociais:hover {
-        background-color: #C68A02;
-    }
-    
-    .redes-sociais img {
-        width: 90%;
-        height: 90%;
-    }
-    /* Fim pagina sobre*/
-    /* Início formulário login */
-    
-    .login-background {
-        background-image: url("../img/background-login.jpg");
-        background-size: 100%;
-    }
-    
-    .formularioCadastro .container-login {
-        width: 80%;
-        margin: auto;
-        background-color: rgba(240, 164, 0, 0.7);
-        border-radius: 10px;
-        margin-bottom: 100px;
-        text-align: center;
-    }
-    
-    .formularioCadastro .container-login h1 {
-        background-color: #b35300;
-        border-radius: 10px 10px 0px 0px;
-    }
-    
-    .formularioLogin {
-        width: 40%;
-        margin: 10px auto;
-        display: block;
-        background-color: rgba(240, 164, 0, 0.7);
-        margin-top: 10%;
-        margin-bottom: 100px;
-        border-radius: 20px;
-        box-shadow: 6px 6px #b35300;
-        padding: 20px;
-    }
-    
-    .areaBtnLogin span {
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    
-    .areaBtnLogin a {
-        color: black;
-    }
-    
-    .areaBtnLogin span:hover {
-        color: rgb(27, 27, 27);
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    
-    .form-input:hover {
-        border-color: yellow;
-        transition: 0.7s;
-    }
-    
-    .form-input {
-        display: block;
-        width: 90%;
-        margin-left: 5%;
-        margin-top: 10px;
-        height: 30px;
-        padding-left: 10px;
-        /* border:solid 2px rgb(27, 196, 27); */
-        border-radius: 8px;
-    }
-    
-    .formularioLogin input {
-        margin-bottom: 5%;
-    }
-    
-    .form-meio {
-        margin: 0% 5%;
-        margin-top: 10px;
-        height: 30px;
-        border-radius: 8px;
-        width: 39.0%;
-        display: left;
-    }
-    
-    .areaBtnLogin {
-        padding: 1%;
-        text-align: center;
-        align-items: center;
-    }
-    
-    .btnLoginEntrar {
-        margin: 0px 50px;
-        padding: 1% 10%;
-        background-color: #ff7700;
-        border: none;
-        border-radius: 5px;
-        color: black;
-        cursor: pointer;
-    }
-    
-    .divBtnCadastro .botaoCadastro {
-        background-color: #b35300;
-        font-weight: 600;
-        border: 2px solid black;
-        border-radius: 5px;
-        padding: 10px 20px;
-        margin-bottom: 30px;
-        -webkit-transition: background-color 0.5s ease-out;
-        transition: background-color 0.5s ease-out;
-    }
-    
-    .tituloCadastro {
-        background-color: #ff7700;
-        padding: 15px 0px;
-        text-shadow: 2px 6px 6px #7e3d04;
-    }
-    
-    .divBtnCadastro .botaoCadastro:hover {
-        background-color: #ff7700;
-    }
-    
-    .btnLoginEntrar:hover {
-        background-color: #b35300;
-    }
-    /* Fim formulário login */
-    /*Parte Filme Individual*/
-    
-    .container-individual {
-        width: 80%;
-        height: 700px;
-        background-color: white;
-        margin: auto;
-        border: 5px solid gray;
-        border-radius: 20px;
-    }
-    
-    .filme-poster {
-        width: 50%;
-        height: 100%;
-        padding: 5%;
-        margin: auto;
-        float: left;
-    }
-    
-    .filme-poster img {
-        margin: 10% 10%;
-        width: 80%;
-        height: 90%;
-    }
-    
-    .informacoes {
-        width: 50%;
-        height: 100%;
-        border-radius: 15px;
-        float: left;
-        background-color: lightgray;
-        text-align: center;
-    }
-    
-    .informacoes .nomedofilme {
-        background-color: gray;
-        height: 80px;
-        padding: 2.5% 0%;
-        border-left: 10px solid gray;
-        border-bottom: 10px solid gray;
-        border-radius: 0px 10px;
-    }
-    
-    .nomedofilme {
-        width: 100%;
-        font-size: 100%;
-        color: white;
-        text-shadow: 3px 3px black;
-    }
-    
-    .info {
-        font-weight: bold;
-    }
-    
-    .informacoes .detalhes {
-        width: 80%;
-        font-size: 100%;
-        text-align: justify;
-        padding: 2.5%;
-    }
-    /*Filme Filme Individual*/
-    /*Parte footer*/
-    
-    .footer {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        position: static;
-        background-color: rgb(36, 37, 37);
-        color: white;
-        text-align: center;
-    }
-    /*Fim footer*/
-    
-    @media only screen and (max-width: 660px) {
-        .navbar ._Menus-show {
-            left: 0;
-            display: none;
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+            box-sizing: border-box;
         }
+        
+        body {
+            background-color: black;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+        /* Menu Responsivo*/
+        
+        .navbar {
+            border-bottom: 5px solid darkorange;
+        }
+        
         nav {
-            text-align: center;
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+            background: #000000;
+            z-index: 1;
+            text-align: right;
         }
-        .menu-area li {
-            padding: 10px 0px;
-            display: unset;
-            list-style-type: unset;
-        }
+        
         .logo {
-            display: none;
+            width: 15%;
+            float: left;
+            text-align: left;
+            padding: 5px 25px;
         }
+        
+        .menu-area li {
+            display: inline-block;
+            list-style-type: none;
+        }
+        
+        .menu-area a {
+            background-color: black;
+            -webkit-transition: background-color 0.5s ease-out;
+            transition: background-color 0.5s ease-out;
+            color: #fff;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: block;
+            padding: 15px 30px;
+            font-size: 75%;
+            line-height: 30px;
+            position: relative;
+            z-index: 1;
+            text-decoration: none;
+        }
+        
+        .menu-area a:hover {
+            background-color: #C68A02;
+        }
+        
+        .navbar .logo img {
+            max-width: 100px;
+            max-height: 10%;
+        }
+        
         .navbar .icon-bar {
-            display: block;
-        }
-        .container-carousel {
-            height: 250px;
-        }
-        .mySlides {
-            height: 200px;
-        }
-        .img-lista {
-            width: 45% !important;
-        }
-        .cel-some {
+            width: 100%;
+            height: 50px;
             display: none;
+            background-color: black;
+            border-bottom: 3px solid black;
         }
-        .texto-forum {
-            float: none;
+        
+        .navbar .button-menu {
+            padding: 5px 10px;
+            height: 100%;
+        }
+        /* Fim do menu */
+        /* Inicio do Carrousel de imagem */
+        
+        .container-carousel {
             width: 100%;
+            height: 500px;
+            border-right: 50px solid darkorange;
+            border-left: 50px solid darkorange;
+            border-top: 25px solid darkorange;
+            border-bottom: 30px solid darkorange;
         }
-        .imagem-forum {
-            float: none;
+        
+        .mySlides {
+            display: none;
             width: 100%;
+            height: 450px;
         }
-        .container-geral-forum {
+        
+        .linha {
             width: 100%;
-            height: 760px;
+            height: 5px;
+            background-color: darkorange;
         }
-        .container-forum {
+        /* Fim do Carroussel da imagem*/
+        /* Lista de imagem */
+        
+        .container-geral-lista {
+            width: 100%;
+            height: 510px;
+            background-color: #C68A02;
+            margin: auto;
+            border-top: 5px solid #C68A02;
+            border-bottom: 5px solid #C68A02;
+        }
+        
+        .container-lista {
             width: 90%;
-            height: 740px;
+            height: 500px;
+            background: #fcd340;
+            margin: auto;
+            border-radius: 100px;
         }
-        .container-sobre {
-            height: 1650px;
+        
+        .container-lista .titulo {
+            width: 100%;
+            height: 100px;
+            padding-top: 1%;
+            border-radius: 100px 100px 0px 0px;
+            background-color: #FAC710;
+            text-align: center;
+            font-size: 25px;
+            color: black;
+            text-shadow: 1px 15px 5px #C68A02;
         }
-    }
-    
-    @media only screen and (max-width: 880px) {
+        
+        .lista .botao-seta {
+            position: absolute;
+            margin: 125px 10px;
+            cursor: pointer;
+            display: left;
+            justify-content: center;
+        }
+        
         .img-lista {
-            width: 22%;
+            width: 18%;
+            height: 350px;
+            padding-top: 1%;
+            padding-left: 2%;
+            justify-content: center;
+            opacity: 1;
+            transition: 0.3s ease-in;
         }
-        .tab-sumir {
-            display: none;
-        }
-        .filme-poster {
-            width: 100%;
-            display: block;
-            float: initial;
-            border-radius: 0px;
-        }
-        .informacoes {
-            width: 100%;
-            display: block;
-            float: initial;
-            border-radius: 0px;
-        }
-        .informacoes .nomedofilme {
-            border-radius: 0px;
-        }
-        .container-individual {
-            margin-bottom: 800px;
-            border-radius: 0px;
-        }
-    }
-    
-    @media only screen and (min-width: 1500px) {
-        .container-carousel {
-            height: 600px;
-        }
-        .mySlides {
-            height: 545px;
-        }
-        .img-lista .sumir {
+        
+        .img-lista .fica {
             display: left;
         }
-    }
+        
+        .img-lista .cel-sumir {
+            display: left;
+        }
+        
+        .img-lista .tab-sumir {
+            display: left;
+        }
+        
+        .img-lista:hover {
+            opacity: 0.66;
+            transition: opacity 0.3s ease-out;
+            -webkit-transform: translateX(8px);
+            transform: translateX(8px);
+            cursor: pointer;
+        }
+        
+        .botao-seta {
+            width: 6%;
+            height: 10%;
+            padding: 0.3%;
+            background-color: #ff7700;
+            -webkit-transition: background-color 0.1s ease-out;
+            transition: background-color 0.1s ease-out;
+            border: 2px solid black;
+            border-radius: 100%;
+        }
+        
+        .botao-seta:hover {
+            background-color: rgb(116, 59, 9);
+        }
+        
+        .botao-seta img {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .img-lista .tab-sumir {
+            display: left;
+        }
+        /* Fim da lista */
+        /* Parte forum e chat*/
+        
+        .container-geral-forum {
+            width: 100%;
+            height: 430px;
+            background-color: darkgoldenrod;
+            margin: auto;
+            border-top: 5px solid darkgoldenrod;
+            border-bottom: 5px solid darkgoldenrod;
+        }
+        
+        .container-forum {
+            width: 90%;
+            height: 420px;
+            background: #fcd340;
+            margin: auto;
+            border-radius: 100px;
+        }
+        
+        .imagem-forum {
+            width: 50%;
+            padding: 1% 4%;
+            display: block;
+            float: left;
+        }
+        
+        .imagem-forum img {
+            width: 100%;
+            height: 350px;
+            border-radius: 510px;
+        }
+        
+        .texto-forum {
+            width: 50%;
+            padding: 4% 7%;
+            display: block;
+            float: left;
+            text-align: center;
+        }
+        
+        .texto-forum h1 {
+            background-color: #FAC710;
+            text-shadow: 1px 5px 5px #C68A02;
+            padding: 2% 10%;
+            border-radius: 10px;
+            margin-bottom: 10%;
+        }
+        
+        .texto-forum p {
+            margin-bottom: 10%;
+        }
+        
+        .texto-forum .botao-forum {
+            background-color: black;
+            border-radius: 10px;
+            border: 5px solid black;
+            padding: 2% 7%;
+            cursor: pointer;
+        }
+        
+        .botao-forum a {
+            color: orangered;
+        }
+        
+        .texto-forum .botao-forum:hover {
+            background-color: orange;
+            border: 5px solid orangered;
+            color: red;
+        }
+        /* Fim parte chat e forum*/
+        /* Lista de filmes pagina*/
+        
+        .container-lista-grande {
+            width: 100%;
+            height: 1730px;
+            background-color: #C68A02;
+            margin: auto;
+            border-top: 5px solid #C68A02;
+            border-bottom: 5px solid #C68A02;
+        }
+        
+        .container-lista-grande .titulo {
+            width: 100%;
+            height: 100px;
+            padding-top: 1%;
+            border-radius: 100px 100px 0px 0px;
+            background-color: #FAC710;
+            text-align: center;
+            font-size: 25px;
+            color: black;
+            text-shadow: 1px 15px 5px #C68A02;
+        }
+        
+        .container-lista-filmes {
+            width: 90%;
+            height: 1720px;
+            background: #fcd340;
+            margin: auto;
+            border-radius: 100px;
+            text-align: center;
+        }
+        
+        .container-lista-filmes .botao-random {
+            width: 100px;
+            height: 100px;
+            border-radius: 50px;
+            border: 5px solid black;
+            background-color: #ff7700;
+            cursor: pointer;
+            -webkit-transition: background-color 0.5s ease-out;
+            transition: background-color 0.5s ease-out;
+        }
+        
+        .container-lista-filmes .botao-random:hover {
+            background-color: #b35300;
+        }
+        
+        .container-lista-filmes .botao-random img {
+            width: 100%;
+            padding: 5px;
+        }
+        /* Fim lista de filmes pagina*/
+        /* Pagina sobre*/
+        
+        .container-sobre {
+            width: 95%;
+            height: 1050px;
+            padding-top: 30px;
+            margin: auto;
+        }
+        
+        .container-geral-sobre {
+            background-color: #FAC710;
+            border-radius: 0px 0px 100px 100px;
+        }
+        
+        .container-sobre .titulo {
+            width: 100%;
+            height: 100px;
+            padding-top: 1%;
+            border-radius: 100px 100px 0px 0px;
+            background-color: #FAC710;
+            text-align: center;
+            font-size: 25px;
+            color: black;
+            text-shadow: 1px 15px 5px #C68A02;
+        }
+        
+        .botoes-redes {
+            width: 100%;
+            height: 160px;
+            padding: 5%;
+        }
+        
+        .redes-sociais {
+            border: 5px solid black;
+            background-color: #FAC710;
+            width: 20%;
+            height: 85%;
+            border-radius: 100%;
+            float: left;
+            margin: 0% 5%;
+        }
+        
+        .redes-sociais:hover {
+            background-color: #C68A02;
+        }
+        
+        .redes-sociais img {
+            width: 90%;
+            height: 90%;
+        }
+        /* Fim pagina sobre*/
+        /* Início formulário login */
+        
+        .login-background {
+            background-image: url("../img/background-login.jpg");
+            background-size: 100%;
+        }
+        
+        .formularioCadastro .container-login {
+            width: 80%;
+            margin: auto;
+            background-color: rgba(240, 164, 0, 0.7);
+            border-radius: 10px;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+        
+        .formularioCadastro .container-login h1 {
+            background-color: #b35300;
+            border-radius: 10px 10px 0px 0px;
+        }
+        
+        .formularioLogin {
+            width: 40%;
+            margin: 10px auto;
+            display: block;
+            background-color: rgba(240, 164, 0, 0.7);
+            margin-top: 10%;
+            margin-bottom: 100px;
+            border-radius: 20px;
+            box-shadow: 6px 6px #b35300;
+            padding: 20px;
+        }
+        
+        .areaBtnLogin span {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .areaBtnLogin a {
+            color: black;
+        }
+        
+        .areaBtnLogin span:hover {
+            color: rgb(27, 27, 27);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        
+        .form-input:hover {
+            border-color: yellow;
+            transition: 0.7s;
+        }
+        
+        .form-input {
+            display: block;
+            width: 90%;
+            margin-left: 5%;
+            margin-top: 10px;
+            height: 30px;
+            padding-left: 10px;
+            /* border:solid 2px rgb(27, 196, 27); */
+            border-radius: 8px;
+        }
+        
+        .formularioLogin input {
+            margin-bottom: 5%;
+        }
+        
+        .form-meio {
+            margin: 0% 5%;
+            margin-top: 10px;
+            height: 30px;
+            border-radius: 8px;
+            width: 39.0%;
+            display: left;
+        }
+        
+        .areaBtnLogin {
+            padding: 1%;
+            text-align: center;
+            align-items: center;
+        }
+        
+        .btnLoginEntrar {
+            margin: 0px 50px;
+            padding: 1% 10%;
+            background-color: #ff7700;
+            border: none;
+            border-radius: 5px;
+            color: black;
+            cursor: pointer;
+        }
+        
+        .divBtnCadastro .botaoCadastro {
+            background-color: #b35300;
+            font-weight: 600;
+            border: 2px solid black;
+            border-radius: 5px;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            -webkit-transition: background-color 0.5s ease-out;
+            transition: background-color 0.5s ease-out;
+        }
+        
+        .tituloCadastro {
+            background-color: #ff7700;
+            padding: 15px 0px;
+            text-shadow: 2px 6px 6px #7e3d04;
+        }
+        
+        .divBtnCadastro .botaoCadastro:hover {
+            background-color: #ff7700;
+        }
+        
+        .btnLoginEntrar:hover {
+            background-color: #b35300;
+        }
+        /* Fim formulário login */
+        /*Parte Filme Individual*/
+        
+        .container-individual {
+            width: 80%;
+            height: 700px;
+            background-color: white;
+            margin: auto;
+            border: 5px solid gray;
+            border-radius: 20px;
+        }
+        
+        .filme-poster {
+            width: 50%;
+            height: 100%;
+            padding: 5%;
+            margin: auto;
+            float: left;
+        }
+        
+        .filme-poster img {
+            margin: 10% 10%;
+            width: 80%;
+            height: 90%;
+        }
+        
+        .informacoes {
+            width: 50%;
+            height: 100%;
+            border-radius: 15px;
+            float: left;
+            background-color: lightgray;
+            text-align: center;
+        }
+        
+        .informacoes .nomedofilme {
+            background-color: gray;
+            height: 80px;
+            padding: 2.5% 0%;
+            border-left: 10px solid gray;
+            border-bottom: 10px solid gray;
+            border-radius: 0px 10px;
+        }
+        
+        .nomedofilme {
+            width: 100%;
+            font-size: 100%;
+            color: white;
+            text-shadow: 3px 3px black;
+        }
+        
+        .info {
+            font-weight: bold;
+        }
+        
+        .informacoes .detalhes {
+            width: 80%;
+            font-size: 100%;
+            text-align: justify;
+            padding: 2.5%;
+        }
+        /*Fim Filme Individual*/
+        /*Parte Chat*/
+        
+        .container-chat {
+            width: 90%;
+            height: 700px;
+            background-color: white;
+            margin: auto;
+            text-align: center;
+        }
+        
+        .container-chat .perfil-container {
+            width: 30%;
+            height: 700px;
+            background-color: lightgray;
+            float: left;
+        }
+        
+        .container-chat .perfil-container p {
+            padding: 16px;
+        }
+        
+        .container-chat .perfil-container h1 {
+            background-color: grey;
+            padding: 5px;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        
+        .container-chat .chat-container {
+            width: 70%;
+            height: 700px;
+            float: left;
+            border: 5px solid grey;
+        }
+        
+        .container-chat .chat-container h1 {
+            background-color: grey;
+            padding: 3px;
+            color: white;
+            text-shadow: 1px 1px black;
+        }
+        
+        .chat-container .mensagem {
+            margin: auto;
+            width: 100%;
+            height: 50px;
+            background-color: #ff7700;
+            padding: 5px 10px;
+        }
+        
+        .chat-container .mensagem .texto-mensagem {
+            float: left;
+            width: 90%;
+            height: 40px;
+            margin: 0;
+            background-color: white;
+            border-radius: 20px;
+            cursor: text;
+        }
+        
+        .chat-container .mensagem .texto-mensagem input {
+            width: 100%;
+            height: 40px;
+            border-radius: 20px;
+            padding: 0% 1%;
+        }
+        
+        .chat-container .mensagem .btn-chat {
+            width: 5%;
+            height: 40px;
+            margin: auto;
+            background-color: yellowgreen;
+            transition: background-color 0.2s;
+            border: 1px solid green;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .chat-container .mensagem .btn-chat:hover {
+            background-color: darkgreen;
+        }
+        
+        .chat-container .mensagem .btn-chat img {
+            width: 90%;
+            height: 30px;
+        }
+        
+        .perfil-container .informacoes-usuario {
+            background-color: orange;
+            width: 100%;
+            height: 328px;
+        }
+        
+        .perfil-container .chat-lista {
+            overflow: auto;
+            padding: 10px;
+            background-color: gray;
+            width: 100%;
+            height: 275px;
+        }
+        
+        .perfil-container .chat-lista .chats {
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ff7700;
+            border-radius: 50px;
+            width: 95%;
+            height: 90px;
+            cursor: pointer;
+        }
+        
+        .perfil-container .chat-lista .chats:hover {
+            background-color: orangered;
+        }
+        
+        .perfil-container .chat-lista .chats .chat-info {
+            width: 90%;
+            margin: auto;
+            padding: 5px;
+        }
+        
+        .perfil-container .chat-lista .chats .chat-info .nome-chat {
+            font-size: 240%;
+            color: black;
+            text-shadow: 1px 1px yellow;
+            width: 70%;
+            float: left;
+        }
+        
+        .perfil-container .chat-lista .chats .chat-info img {
+            border-radius: 20px;
+            width: 30%;
+            height: 80px;
+            float: left;
+        }
+        /*Fim parte filme*/
+        /*Parte footer*/
+        
+        .footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            position: static;
+            background-color: rgb(36, 37, 37);
+            color: white;
+            text-align: center;
+        }
+        /*Fim footer*/
+        
+        @media only screen and (max-width: 660px) {
+            .navbar ._Menus-show {
+                left: 0;
+                display: none;
+            }
+            nav {
+                text-align: center;
+            }
+            .menu-area li {
+                padding: 10px 0px;
+                display: unset;
+                list-style-type: unset;
+            }
+            .logo {
+                display: none;
+            }
+            .navbar .icon-bar {
+                display: block;
+            }
+            .container-carousel {
+                height: 250px;
+            }
+            .mySlides {
+                height: 200px;
+            }
+            .img-lista {
+                width: 45% !important;
+            }
+            .cel-some {
+                display: none;
+            }
+            .texto-forum {
+                float: none;
+                width: 100%;
+            }
+            .imagem-forum {
+                float: none;
+                width: 100%;
+            }
+            .container-geral-forum {
+                width: 100%;
+                height: 760px;
+            }
+            .container-forum {
+                width: 90%;
+                height: 740px;
+            }
+            .container-sobre {
+                height: 1650px;
+            }
+        }
+        
+        @media only screen and (max-width: 880px) {
+            .img-lista {
+                width: 22%;
+            }
+            .tab-sumir {
+                display: none;
+            }
+            .filme-poster {
+                width: 100%;
+                display: block;
+                float: initial;
+                border-radius: 0px;
+            }
+            .informacoes {
+                width: 100%;
+                display: block;
+                float: initial;
+                border-radius: 0px;
+            }
+            .informacoes .nomedofilme {
+                border-radius: 0px;
+            }
+            .container-individual {
+                margin-bottom: 800px;
+                border-radius: 0px;
+            }
+            .container-chat {
+                height: 1310px;
+            }
+            .container-chat .perfil-container {
+                width: 100%;
+                height: 655px;
+            }
+            .container-chat .chat-container {
+                width: 100%;
+                height: 655px;
+            }
+        }
+        
+        @media only screen and (min-width: 1500px) {
+            .container-carousel {
+                height: 600px;
+            }
+            .mySlides {
+                height: 545px;
+            }
+            .img-lista .sumir {
+                display: left;
+            }
+        }

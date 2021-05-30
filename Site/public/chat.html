@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/png" href="./img/icone.png">
+    <title>Filme Individual</title>
+</head>
+
+<body class="login-background" onchange="myFunction()">
+    <div class="navbar">
+        <div class="icon-bar">
+            <img class="button-menu" style="cursor: pointer;" onclick="Show()" src="./img/menu.png">
+            <a href="./index.html"><img class="button-menu" src="./img/logo.png"></a>
+
+        </div>
+        <nav>
+            <div class="logo">
+                <a href="./index.html"><img src="./img/logo.png" alt="logo"></a>
+            </div>
+            <ul class="menu-area" id="nav-lists" value="0">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./lista.html">Filmes</a></li>
+                <li><a href="./chat.html">Chat</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+    <br>
+    <div class="container-chat">
+        <div class="perfil-container">
+            <h1>Perfil</h1>
+            <p id="inserir_nome"></p>
+            <div class="informacoes-usuario">
+            </div>
+            <div class="chat-lista">
+                <div class="chats">
+                    <div class="chat-info"><img src="./img/chat/chat-1.png">
+                        <div class="nome-chat">Geral</div>
+                    </div>
+                </div>
+                <div class="chats">
+                    <div class="chat-info"><img src="./img/chat/chat-2.jpg">
+                        <div class="nome-chat">Film Noir</div>
+                    </div>
+                </div>
+                <div class="chats">
+                    <div class="chat-info"><img src="./img/chat/chat-3.png">
+                        <div class="nome-chat">Classicos</div>
+                    </div>
+                </div>
+                <div class="chats">
+                    <div class="chat-info"><img src="./img/chat/chat-4.jpg">
+                        <div class="nome-chat">Spaghetti Western</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-container">
+            <h1>Chat</h1>
+            <div class="mensagem">
+                <div class="texto-mensagem"><input id="chat" name="chat"></div>
+                <button class="btn-chat"><img src="./img/seta.png"</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+</body>
+<script>
+    window.onload = mostrar_nome;
+
+    function mostrar_nome() {
+        if (sessionStorage.login_usuario_meuapp == undefined) {
+            alert("Voce deve logar no seu perfil!");
+            window.location.href = 'login.html';
+        } else {
+            var nome_do_usuario = sessionStorage.login_usuario_meuapp;
+            console.log(nome_do_usuario)
+            inserir_nome.innerHTML = `Olá <b> ${nome_do_usuario} </b> !`;
+        }
+
+
+    }
+
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+            navList.classList.add("_Menus-show");
+            navList.value = 1;
+        } else {
+            navList.classList.remove("_Menus-show");
+            navList.value = 0;
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 660px)")
+    myFunction(x) // Call listener function at run time
+    x.addListener(myFunction) // Attach listener function on state changes
+</script>
+
+</html>
