@@ -228,7 +228,7 @@
         
         .texto-forum {
             width: 50%;
-            padding: 4% 7%;
+            padding: 2% 7%;
             display: block;
             float: left;
             text-align: center;
@@ -239,11 +239,12 @@
             text-shadow: 1px 5px 5px #C68A02;
             padding: 2% 10%;
             border-radius: 10px;
-            margin-bottom: 10%;
+            margin-bottom: 3%;
         }
         
         .texto-forum p {
             margin-bottom: 10%;
+            font-size: 200%;
         }
         
         .texto-forum .botao-forum {
@@ -320,7 +321,6 @@
         
         .container-sobre {
             width: 95%;
-            height: 1050px;
             padding-top: 30px;
             margin: auto;
         }
@@ -328,6 +328,7 @@
         .container-geral-sobre {
             background-color: #FAC710;
             border-radius: 0px 0px 100px 100px;
+            height: 1400px;
         }
         
         .container-sobre .titulo {
@@ -344,18 +345,26 @@
         
         .botoes-redes {
             width: 100%;
-            height: 160px;
-            padding: 5%;
+            height: 100px;
+            cursor: pointer;
         }
         
         .redes-sociais {
             border: 5px solid black;
             background-color: #FAC710;
-            width: 20%;
-            height: 85%;
-            border-radius: 100%;
+            width: 100px;
+            height: 100px;
             float: left;
-            margin: 0% 5%;
+            border-radius: 100%;
+            margin: 0%;
+        }
+        
+        .nome-git {
+            font-size: 200%;
+            float: left;
+            margin: 30px 10px;
+            color: black;
+            text-decoration: underline;
         }
         
         .redes-sociais:hover {
@@ -499,13 +508,27 @@
         .filme-poster {
             width: 50%;
             height: 100%;
-            padding: 5%;
+            padding: 1%;
             margin: auto;
             float: left;
         }
         
+        .filme-poster .button-voltar {
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            padding: 5px;
+            border: 3px solid black;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+        
+        .filme-poster .button-voltar:hover {
+            background-color: darkgrey;
+        }
+        
         .filme-poster img {
-            margin: 10% 10%;
+            margin: 0% 10%;
             width: 80%;
             height: 90%;
         }

@@ -33,6 +33,7 @@
     <br>
     <div class="container-individual">
         <div class="filme-poster">
+            <a href="javascript:history.back()"><button class="button-voltar"><img src="./img/seta.png"></button></a>
             <img id="filme-poster" src="">
         </div>
         <div class="informacoes">
@@ -51,6 +52,9 @@
 </body>
 <script src="./js/main.js"></script>
 <script>
+    document.write('<a href="' + document.referrer + '">Go Back</a>');
+
+
     'use strict';
     window.onload = mostrar_filme;
 

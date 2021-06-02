@@ -84,7 +84,6 @@
 
     function mostrar_nome() {
         if (sessionStorage.login_usuario_meuapp == undefined) {
-            alert("Voce deve logar no seu perfil!");
             window.location.href = 'login.html';
         } else {
             var nome_do_usuario = sessionStorage.login_usuario_meuapp;
