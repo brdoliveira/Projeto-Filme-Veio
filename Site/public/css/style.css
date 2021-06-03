@@ -113,8 +113,11 @@
             text-decoration: none;
         }
         
-        li.dropdown {
+        .lado {
             float: right;
+        }
+        
+        li.dropdown {
             display: inline-block;
         }
         
@@ -143,6 +146,15 @@
         }
         /* Fim do Carroussel da imagem*/
         /* Lista de imagem */
+        
+        .graph {
+            display: inline-block;
+            width: 97%;
+            height: 300px;
+            margin: 5% 1.5%;
+            padding: 5px;
+            color: black;
+        }
         
         .container-geral-lista {
             width: 100%;

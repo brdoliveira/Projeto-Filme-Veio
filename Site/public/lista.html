@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" type="image/png" href="./img/icone.png">
     <title>Lista de filmes</title>
@@ -28,7 +29,7 @@
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
                 <li id="login"><a href="./login.html">Login</a></li>
-                <li id="usuario" class="dropdown">
+                <li id="usuario" class="dropdown lista">
                     <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
                     <div class="dropdown-content">
                         <a href="#" onclick="logoff()">Sair</a>
@@ -80,7 +81,13 @@
         </div>
         <br>
         <br>
-        <br>
+        <div class="container-geral-forum">
+            <div class="container-forum">
+                <div class="graph">
+                    <canvas id="myChartBar"></canvas>
+                </div>
+            </div>
+        </div>
         <br>
         <br>
         <br>
@@ -95,11 +102,37 @@
 </body>
 <script src="./js/main.js"></script>
 <script>
+    function Grafico() {
+
+        const labelsBar = lista_nomes;
+
+        const dataBar = {
+            labels: labelsBar,
+            datasets: [{
+                label: "Notas Filmes",
+                backgroundColor: ["#ff7700", "#FAC710", "#C68A02"],
+                borderColor: "black",
+                data: lista_notas,
+            }, ],
+        }
+
+        const configBar = {
+            type: "bar",
+            data: dataBar,
+            options: {
+                maintainAspectRatio: false
+            },
+        }
+        var myChartBar = new Chart(document.getElementById("myChartBar"), configBar);
+    }
+
     'use strict';
     window.onload = ao_entrar;
     let id_filme = " ";
     let id_title = " ";
     let id_src = " ";
+    var lista_nomes = [];
+    var lista_notas = [];
 
     function ao_entrar() {
         entrar_pagina()
@@ -134,21 +167,31 @@
         while (cont < 20) {
             var imagem_loop = document.getElementById(`${cont}`);
             gerar_numero();
-            let api_key = '9b975cfc'
-                //let api_key = 'e0620bd4';
+            //let api_key = '9b975cfc'
+            //let api_key = 'e0620bd4';
+            let api_key = '2888d6ef';
             const url = `https://www.omdbapi.com/?apikey=${api_key}&i=${id_filme}`;
             const data = await fetch(url);
             const response = await data.json();
             const poster = response.Poster;
             const imdb = response.imdbID;
+            const title = response.Title;
+            const imdbRating = response.imdbRating;
+            var nota_filme = imdbRating;
             if (poster == 'N/A') {
                 cont--
             } else {
+                if (nota_filme == 'N/A') {
+                    nota_filme = 5;
+                }
                 imagem_loop.src = `${poster}`;
                 imagem_loop.alt = `${imdb}`;
+                lista_notas.push(Number(nota_filme));
+                lista_nomes.push(title);
             }
             cont++
         }
+        Grafico()
     }
 
 
