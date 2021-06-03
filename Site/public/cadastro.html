@@ -27,37 +27,54 @@
                 <li><a href="./lista.html">Filmes</a></li>
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li id="login"><a href="./login.html">Login</a></li>
+                <li id="usuario" class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="logoff()">Sair</a>
+                </li>
             </ul>
         </nav>
-    </div>
-    <br>
-    <!-- Inicío formulário -->
-    <form class="formularioCadastro" method="POST" id="form_cadastro">
-        <div class="container-login">
-            <h1 class="tituloCadastro">Cadastro</h1>
-            <!-- informações da empresa -->
-            <h2 class="tituloCadastro">Informações do Usuario</h2>
-            <input class="form-input" name="nome" placeholder="Nome" maxlength="60" required>
-            <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" maxlength="12" required>
-            <input type="date" class="form-meio" name="dataNasc" placeholder="Data de Nascimento" required>
-            <br>
-            <br>
-            <!-- informações da conta -->
-            <h2 class="tituloCadastro">Informações da conta</h2>
-            <input class="form-input" name="login" placeholder="Login Desejado" maxlength="16" required>
-            <input type="password" class="form-meio" name="senha" placeholder="Senha" maxlength="16" required>
-            <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" required >-->
-            <br>
-            <br>
-            <div class="divBtnCadastro">
-                <button type="button" class="botaoCadastro" onclick="cadastrar()">Cadastre-me</button>
-            </div>
         </div>
-    </form>
+        <br>
+        <!-- Inicío formulário -->
+        <form class="formularioCadastro" method="POST" id="form_cadastro">
+            <div class="container-login">
+                <h1 class="tituloCadastro">Cadastro</h1>
+                <!-- informações da empresa -->
+                <h2 class="tituloCadastro">Informações do Usuario</h2>
+                <input class="form-input" name="nome" placeholder="Nome" maxlength="60" required>
+                <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" maxlength="12" required>
+                <input type="date" class="form-meio" name="dataNasc" placeholder="Data de Nascimento" required>
+                <br>
+                <br>
+                <!-- informações da conta -->
+                <h2 class="tituloCadastro">Informações da conta</h2>
+                <input class="form-input" name="login" placeholder="Login Desejado" maxlength="16" required>
+                <input type="password" class="form-meio" name="senha" placeholder="Senha" maxlength="16" required>
+                <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" required >-->
+                <br>
+                <br>
+                <div class="divBtnCadastro">
+                    <button type="button" class="botaoCadastro" onclick="cadastrar()">Cadastre-me</button>
+                </div>
+            </div>
+        </form>
 </body>
 <script src="./js/main.js"></script>
 <script>
+    function ao_entrar() {
+        entrar_pagina()
+    }
+
+    function entrar_pagina() {
+        if (sessionStorage.login_usuario_meuapp != undefined) {
+            usuario.style.display = 'block';
+            login.style.display = 'none';
+            perfil.innerHTML = sessionStorage.login_usuario_meuapp
+        }
+    }
+
     function myFunction(x) {
         if (x.matches) { // If media query matches
             navList.classList.add("_Menus-show");

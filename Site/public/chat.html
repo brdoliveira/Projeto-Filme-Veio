@@ -26,61 +26,79 @@
                 <li><a href="./lista.html">Filmes</a></li>
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li id="login"><a href="./login.html">Login</a></li>
+                <li id="usuario" class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="logoff()">Sair</a>
+                </li>
             </ul>
         </nav>
-    </div>
-    <br>
-    <div class="container-chat">
-        <div class="perfil-container">
-            <h1>Perfil</h1>
-            <p id="inserir_nome"></p>
-            <div class="informacoes-usuario">
+        </div>
+        <br>
+        <div class="container-chat">
+            <div class="perfil-container">
+                <h1>Perfil</h1>
+                <p id="inserir_nome"></p>
+                <div class="informacoes-usuario">
+                </div>
+                <div class="chat-lista">
+                    <div class="chats">
+                        <div class="chat-info"><img src="./img/chat/chat-1.png">
+                            <div class="nome-chat">Geral</div>
+                        </div>
+                    </div>
+                    <div class="chats">
+                        <div class="chat-info"><img src="./img/chat/chat-2.jpg">
+                            <div class="nome-chat">Film Noir</div>
+                        </div>
+                    </div>
+                    <div class="chats">
+                        <div class="chat-info"><img src="./img/chat/chat-3.png">
+                            <div class="nome-chat">Classicos</div>
+                        </div>
+                    </div>
+                    <div class="chats">
+                        <div class="chat-info"><img src="./img/chat/chat-4.jpg">
+                            <div class="nome-chat">Spaghetti Western</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="chat-lista">
-                <div class="chats">
-                    <div class="chat-info"><img src="./img/chat/chat-1.png">
-                        <div class="nome-chat">Geral</div>
-                    </div>
+            <div class="chat-container">
+                <h1>Chat</h1>
+                <div class="mensagem">
+                    <form id="form_publicar" method="post" onsubmit="return publicar()">
+                        <div class="texto-mensagem"><input id="chat" name="descricao"></div>
+                        <button id="btn_publicar" class="btn-chat"><img src="./img/seta.png"></button>
+                    </form>
                 </div>
-                <div class="chats">
-                    <div class="chat-info"><img src="./img/chat/chat-2.jpg">
-                        <div class="nome-chat">Film Noir</div>
-                    </div>
-                </div>
-                <div class="chats">
-                    <div class="chat-info"><img src="./img/chat/chat-3.png">
-                        <div class="nome-chat">Classicos</div>
-                    </div>
-                </div>
-                <div class="chats">
-                    <div class="chat-info"><img src="./img/chat/chat-4.jpg">
-                        <div class="nome-chat">Spaghetti Western</div>
+                <br>
+                <div class="feed">
+                    <div id="feed_container" class="container">
                     </div>
                 </div>
             </div>
         </div>
-        <div class="chat-container">
-            <h1>Chat</h1>
-            <div class="mensagem">
-                <form id="form_publicar" method="post" onsubmit="return publicar()">
-                    <div class="texto-mensagem"><input id="chat" name="descricao"></div>
-                    <button id="btn_publicar" class="btn-chat"><img src="./img/seta.png"></button>
-                </form>
-            </div>
-            <br>
-            <div class="feed">
-                <div id="feed_container" class="container">
-                </div>
-            </div>
-        </div>
-    </div>
-    <br>
-    <br>
+        <br>
+        <br>
 </body>
 <script src="./js/main.js"></script>
 <script>
-    window.onload = mostrar_nome;
+    window.onload = ao_entrar;
+
+    function ao_entrar() {
+        entrar_pagina()
+        mostrar_nome()
+    }
+
+    function entrar_pagina() {
+        if (sessionStorage.login_usuario_meuapp != undefined) {
+            usuario.style.display = 'block';
+            login.style.display = 'none';
+            perfil.innerHTML = sessionStorage.login_usuario_meuapp
+        }
+    }
 
     function mostrar_nome() {
         if (sessionStorage.login_usuario_meuapp == undefined) {

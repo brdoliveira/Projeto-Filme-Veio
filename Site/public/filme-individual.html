@@ -26,28 +26,33 @@
                 <li><a href="./lista.html">Filmes</a></li>
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li id="login"><a href="./login.html">Login</a></li>
+                <li id="usuario" class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="logoff()">Sair</a>
+                </li>
             </ul>
         </nav>
-    </div>
-    <br>
-    <div class="container-individual">
-        <div class="filme-poster">
-            <a href="javascript:history.back()"><button class="button-voltar"><img src="./img/seta.png"></button></a>
-            <img id="filme-poster" src="">
         </div>
-        <div class="informacoes">
-            <div class="nomedofilme">
-                <h1 id="filme-titulo"></h1>
+        <br>
+        <div class="container-individual">
+            <div class="filme-poster">
+                <a href="javascript:history.back()"><button class="button-voltar"><img src="./img/seta.png"></button></a>
+                <img id="filme-poster" src="">
             </div>
-            <br>
-            <div class="detalhes" id="filme-detalhes"></div>
-            <br>
+            <div class="informacoes">
+                <div class="nomedofilme">
+                    <h1 id="filme-titulo"></h1>
+                </div>
+                <br>
+                <div class="detalhes" id="filme-detalhes"></div>
+                <br>
+            </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <div class="espaco"></div>
+        <br>
+        <br>
+        <div class="espaco"></div>
 
 </body>
 <script src="./js/main.js"></script>
@@ -56,7 +61,20 @@
 
 
     'use strict';
-    window.onload = mostrar_filme;
+    window.onload = ao_entrar;
+
+    function ao_entrar() {
+        entrar_pagina()
+        mostrar_filme()
+    }
+
+    function entrar_pagina() {
+        if (sessionStorage.login_usuario_meuapp != undefined) {
+            usuario.style.display = 'block';
+            login.style.display = 'none';
+            perfil.innerHTML = sessionStorage.login_usuario_meuapp
+        }
+    }
 
     async function mostrar_filme() {
         let params = new URLSearchParams(document.location.search.substring(1));

@@ -27,77 +27,96 @@
                 <li><a href="./lista.html">Filmes</a></li>
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li id="login"><a href="./login.html">Login</a></li>
+                <li id="usuario" class="dropdown">
+                    <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
+                    <div class="dropdown-content">
+                        <a href="#" onclick="logoff()">Sair</a>
+                </li>
             </ul>
         </nav>
-    </div>
-    <br>
-    <div class="container-sobre">
-        <div class="titulo">
-            <h1>Sobre nós</h1>
         </div>
-        <div class="container-geral-sobre">
-            <div class="container-forum">
-                <div class="texto-forum">
-                    <h1>Um pouco da criação do site</h1>
-                    <p>Comecei a fazer o site pois sou um fã de filmes antigos e acho que o filme consegue mostrar o que o diretor pensa sobre a cultura que o filme está inserido...
-                    </p>
-                </div>
-                <div class="imagem-forum">
-                    <img src="./img/sobre-pagina.jpg">
-                </div>
+        <br>
+        <div class="container-sobre">
+            <div class="titulo">
+                <h1>Sobre nós</h1>
             </div>
-            <br>
-            <div class="container-forum">
-                <div class="imagem-forum">
-                    <img src="https://s2.glbimg.com/q7BKzEx0y8OwqiGHozFMxen1tu4=/e.glbimg.com/og/ed/f/original/2019/09/18/the-wizard-of-oz.jpg">
-                </div>
-                <div class="texto-forum">
-                    <h1>Minhas Redes Sociais</h1>
-                    <div class="botoes-redes">
-                        <a href="https://github.com/brdoliveira">
-                            <button class="redes-sociais"><img src="./img/git.png"></button>
-                            <span class="nome-git">brdoliveira</span>
-                        </a>
+            <div class="container-geral-sobre">
+                <div class="container-forum">
+                    <div class="texto-forum">
+                        <h1>Um pouco da criação do site</h1>
+                        <p>Comecei a fazer o site pois sou um fã de filmes antigos e acho que o filme consegue mostrar o que o diretor pensa sobre a cultura que o filme está inserido...
+                        </p>
                     </div>
-                    <br>
-                    <div class="botoes-redes">
-                        <a href="https://github.com/brdoliveira">
-                            <button class="redes-sociais"><img src="./img/instagram.png"></button>
-                            <span class="nome-git">brdoliveira</span>
-                        </a>
+                    <div class="imagem-forum">
+                        <img src="./img/sobre-pagina.jpg">
                     </div>
                 </div>
-            </div>
-            <br>
-            <div class="container-forum">
-                <div class="texto-forum">
-                    <h1>Informe algum erro!</h1>
-                    <p> Para informar algum erro contate-nos:
-                        <br> Telefone: (11) 99579-6043 - Bruno Ribeiro
-                        <br> Email: bruno.oliveira@bandtec.com.br
-                    </p>
+                <br>
+                <div class="container-forum">
+                    <div class="imagem-forum">
+                        <img src="https://s2.glbimg.com/q7BKzEx0y8OwqiGHozFMxen1tu4=/e.glbimg.com/og/ed/f/original/2019/09/18/the-wizard-of-oz.jpg">
+                    </div>
+                    <div class="texto-forum">
+                        <h1>Minhas Redes Sociais</h1>
+                        <div class="botoes-redes">
+                            <a href="https://github.com/brdoliveira">
+                                <button class="redes-sociais"><img src="./img/git.png"></button>
+                                <span class="nome-git">brdoliveira</span>
+                            </a>
+                        </div>
+                        <br>
+                        <div class="botoes-redes">
+                            <a href="https://github.com/brdoliveira">
+                                <button class="redes-sociais"><img src="./img/instagram.png"></button>
+                                <span class="nome-git">brdoliveira</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="imagem-forum">
-                    <img src="https://s2.glbimg.com/q7BKzEx0y8OwqiGHozFMxen1tu4=/e.glbimg.com/og/ed/f/original/2019/09/18/the-wizard-of-oz.jpg">
+                <br>
+                <div class="container-forum">
+                    <div class="texto-forum">
+                        <h1>Informe algum erro!</h1>
+                        <p> Para informar algum erro contate-nos:
+                            <br> Telefone: (11) 99579-6043 - Bruno Ribeiro
+                            <br> Email: bruno.oliveira@bandtec.com.br
+                        </p>
+                    </div>
+                    <div class="imagem-forum">
+                        <img src="https://s2.glbimg.com/q7BKzEx0y8OwqiGHozFMxen1tu4=/e.glbimg.com/og/ed/f/original/2019/09/18/the-wizard-of-oz.jpg">
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <div class="footer">
         <br>
         <br>
-        <p>Filme Véio © 2021. Todos direitos reservados.</p>
         <br>
         <br>
-    </div>
+        <div class="footer">
+            <br>
+            <br>
+            <p>Filme Véio © 2021. Todos direitos reservados.</p>
+            <br>
+            <br>
+        </div>
 </body>
 <script src="./js/main.js"></script>
 <script>
+    window.onload = ao_entrar;
+
+    function ao_entrar() {
+        entrar_pagina()
+    }
+
+    function entrar_pagina() {
+        if (sessionStorage.login_usuario_meuapp != undefined) {
+            usuario.style.display = 'block';
+            login.style.display = 'none';
+            perfil.innerHTML = sessionStorage.login_usuario_meuapp
+        }
+    }
+
     function myFunction(x) {
         if (x.matches) { // If media query matches
             navList.classList.add("_Menus-show");
