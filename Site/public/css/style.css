@@ -319,8 +319,8 @@
         }
         
         .texto-forum p {
-            margin-bottom: 10%;
-            font-size: 200%;
+            margin-bottom: 5%;
+            font-size: 150%;
         }
         
         .texto-forum .botao-forum {
@@ -703,6 +703,13 @@
             background-color: white;
             border-radius: 20px;
             cursor: text;
+        }
+        
+        .feed {
+            word-wrap: break-word;
+            height: 580px;
+            width: 100%;
+            overflow: auto;
         }
         
         .chat-container .mensagem .texto-mensagem input {

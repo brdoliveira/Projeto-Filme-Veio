@@ -27,7 +27,7 @@
                 <li><a href="./chat.html">Chat</a></li>
                 <li><a href="./sobre.html">Sobre</a></li>
                 <li id="login"><a href="./login.html">Login</a></li>
-                <li id="usuario" class="dropdown">
+                <li id="usuario" class="dropdown lado">
                     <a href="javascript:void(0)" class="dropbtn"><span id="perfil"></span></a>
                     <div class="dropdown-content">
                         <a href="#" onclick="logoff()">Sair</a>
@@ -108,7 +108,6 @@
             console.log(nome_do_usuario)
             inserir_nome.innerHTML = `Olá <b> ${nome_do_usuario} </b> !`;
             obterPublicacoes();
-            atualizarFeed();
         }
 
 
@@ -142,6 +141,7 @@
 
                 finalizarAguardar();
             } else {
+                alert("Erro ao Publicar");
                 console.log('Erro ao publicar!');
                 resposta.text().then(texto => {
                     console.error(texto);
@@ -149,7 +149,7 @@
                 });
             }
         });
-
+        chat.value = ""
         return false;
     }
 

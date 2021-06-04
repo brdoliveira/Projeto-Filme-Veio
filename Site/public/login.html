@@ -80,8 +80,9 @@
                 });
 
             } else {
-
+                alert("Erro de Login!!")
                 console.log('Erro de login!');
+                inputSenhaLogin.value = "";
 
                 resposta.text().then(texto => {
                     console.error(texto);
