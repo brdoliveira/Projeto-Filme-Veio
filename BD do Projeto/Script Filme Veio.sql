@@ -12,7 +12,7 @@ create table Usuario(
 
 create table Publicacao(
 	idChat int primary key auto_increment,
-    descricao varchar(20),
+    descricao varchar(200),
     fk_usuario int
 );
 alter table Publicacao add foreign key (fk_usuario) references Usuario(idUsuario);
