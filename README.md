@@ -1,5 +1,7 @@
-![image](https://user-images.githubusercontent.com/66849496/120882930-dc8bd680-c5b0-11eb-93a5-c4b0fd093882.png)
-# 🎥 FILME VEIO
+![README-logo](https://user-images.githubusercontent.com/66849496/121030012-786b3d00-c77f-11eb-8082-b264135e226c.png)
+
+
+<h1 align="center">🎥 FILME VEIO</h1>
 Um projeto pra quem gosta de filmes antigos
 
 ## 🛠️ Construído com
@@ -12,9 +14,8 @@ Um projeto pra quem gosta de filmes antigos
 
 ⚠️ [NODE](https://nodejs.org/en/)
 
-## 🔧 Instalação
-
-Para testar esse projeto e ver funcionando siga os seguintes passos!
+<h2 align="center">🔧 Instalação</h2>
+<p>Para testar esse projeto e ver funcionando siga os seguintes passos!</p>
 
 1️⃣ No terminal, clone o projeto:
 
@@ -52,4 +53,10 @@ Inserindo os dados do seu banco de dados em .dev
 npm start
 ```
 
-✨✨✨PRONTO!✨✨✨
+<p align="center"><b>✨✨✨PRONTO!✨✨✨</b></p>
+
+<h2 align="center">🧐 Autor</h2>
+<a href="https://github.com/brdoliveira" title="Github"><b>Bruno Ribeiro</b> ⚓</a>
+
+<h2 align="center">Até Mais!!!</h2>
+<img align="center" src="final.gif" width="300px;" alt=""/>
