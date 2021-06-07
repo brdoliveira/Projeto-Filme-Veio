@@ -43,15 +43,15 @@
                 <h1 class="tituloCadastro">Cadastro</h1>
                 <!-- informações da empresa -->
                 <h2 class="tituloCadastro">Informações do Usuario</h2>
-                <input class="form-input" name="nome" placeholder="Nome" maxlength="60" required>
-                <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" maxlength="12" required>
+                <input class="form-input" name="nome" placeholder="Nome" minlength="10 " maxlength="60" required>
+                <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" minlength="12" maxlength="12" required>
                 <input type="date" class="form-meio" name="dataNasc" placeholder="Data de Nascimento" required>
                 <br>
                 <br>
                 <!-- informações da conta -->
                 <h2 class="tituloCadastro">Informações da conta</h2>
-                <input class="form-input" name="login" placeholder="Login Desejado" maxlength="16" required>
-                <input type="password" class="form-meio" name="senha" placeholder="Senha" maxlength="16" required>
+                <input class="form-input" name="login" placeholder="Login Desejado" minlength="8" maxlength="16" required>
+                <input type="password" class="form-meio" name="senha" placeholder="Senha" minlength="5" maxlength="16" required>
                 <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" required >-->
                 <br>
                 <br>
