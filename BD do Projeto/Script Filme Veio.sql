@@ -13,8 +13,8 @@ create table Usuario(
 create table Publicacao(
 	idChat int primary key auto_increment,
     descricao varchar(200),
-    fk_usuario int
+    fkUsuario int
 );
-alter table Publicacao add foreign key (fk_usuario) references Usuario(idUsuario);
+alter table Publicacao add foreign key (fkUsuario) references Usuario(idUsuario);
 
 drop database FilmeVeio;

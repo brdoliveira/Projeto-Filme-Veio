@@ -40,23 +40,23 @@
         <!-- Inicío formulário -->
         <form class="formularioCadastro" method="POST" id="form_cadastro">
             <div class="container-login">
-                <h1 class="tituloCadastro">Cadastro</h1>
+                <h1 class="tituloCadastro">Chat</h1>
                 <!-- informações da empresa -->
                 <h2 class="tituloCadastro">Informações do Usuario</h2>
-                <input class="form-input" name="nome" placeholder="Nome" minlength="10 " maxlength="60" required>
-                <input class="form-meio" name="telefone" placeholder="Telefone (somente números)" minlength="12" maxlength="12" required>
-                <input type="date" class="form-meio" name="dataNasc" placeholder="Data de Nascimento" required>
+                <input class="form-input" id="nome" name="nome" placeholder="Nome" required maxlength="60">
+                <input class="form-meio" id="telefone" name="telefone" placeholder="Telefone (somente números)" required maxlength="12">
+                <input type="date" class="form-meio" id="data" name="dataNasc" placeholder="Data de Nascimento">
                 <br>
                 <br>
                 <!-- informações da conta -->
                 <h2 class="tituloCadastro">Informações da conta</h2>
-                <input class="form-input" name="login" placeholder="Login Desejado" minlength="8" maxlength="16" required>
-                <input type="password" class="form-meio" name="senha" placeholder="Senha" minlength="5" maxlength="16" required>
-                <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" required >-->
+                <input class="form-input" id="login" name="login" placeholder="Login Desejado" maxlength="16" required>
+                <input type="password" id="senha" class="form-meio" name="senha" placeholder="Senha" maxlength="16" required>
+                <!--<input type="password" class="form-meio" id="inputConfirmarSenha" placeholder="Confirmar senha" >-->
                 <br>
                 <br>
                 <div class="divBtnCadastro">
-                    <button type="button" class="botaoCadastro" onclick="cadastrar()">Cadastre-me</button>
+                    <button type="button" class="botaoCadastro" onclick="validacao()">Cadastre-me</button>
                 </div>
             </div>
         </form>
@@ -76,7 +76,8 @@
     }
 
     function myFunction(x) {
-        if (x.matches) { // If media query matches
+        var px = x.matches;
+        if (px) { // If media query matches
             navList.classList.add("_Menus-show");
             navList.value = 1;
         } else {
@@ -88,6 +89,27 @@
     var x = window.matchMedia("(max-width: 660px)")
     myFunction(x) // Call listener function at run time
     x.addListener(myFunction) // Attach listener function on state changes
+
+    function validacao() {
+        var nome = form_cadastro.nome.value;
+        var telefone = form_cadastro.telefone.value;
+        var data = form_cadastro.data.value;
+        var login = form_cadastro.login.value;
+        var senha = form_cadastro.senha.value;
+        if (nome == "") {
+            alert("Algum valor não inserido!")
+        } else if (telefone == "") {
+            alert("Algum valor não inserido!")
+        } else if (data == "") {
+            alert("Algum valor não inserido!")
+        } else if (login == "") {
+            alert("Algum valor não inserido!")
+        } else if (senha == "") {
+            alert("Algum valor não inserido!")
+        } else {
+            cadastrar()
+        }
+    }
 
     function cadastrar() {
         var formulario = new URLSearchParams(new FormData(form_cadastro));
@@ -101,7 +123,7 @@
                 window.location.href = 'login.html';
 
             } else {
-
+                alert('Erro de cadastrar!');
                 console.log('Erro de cadastro!');
                 //response.text().then(function(resposta) {
                 //  boxAlert.innerHTML = resposta;
