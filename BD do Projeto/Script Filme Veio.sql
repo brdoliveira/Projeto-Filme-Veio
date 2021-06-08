@@ -20,7 +20,7 @@ select * from chat;
 
 create table Publicacao(
 	idPublicacao int primary key auto_increment,
-    descricao varchar(200),
+    descricao varchar(500),
     fkUsuario int,
     fkChat int
 );

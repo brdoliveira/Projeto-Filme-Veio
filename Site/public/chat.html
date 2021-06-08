@@ -68,7 +68,7 @@
             <div class="chat-container">
                 <h1 onclick=" document.location.reload()">Chat</h1>
                 <div class="mensagem">
-                    <div class="texto-mensagem"><input id="desc" name="descricao"></div>
+                    <div class="texto-mensagem"><input id="desc" name="descricao" maxlength="400"></div>
                     <button id="btn_publicar" class="btn-chat" onclick="comentar()"><img src="./img/seta.png"></button>
                 </div>
                 <br>
@@ -124,9 +124,9 @@
             for (let i = 0; i < data.length; i++) {
                 console.log(data[i])
                 aparecer_chat.innerHTML += `
-                    <div id="comentario" class="comentario_box">
-                        <span class="">${data[i].login}:</span>
-                        <span class="">${data[i].descricao}</span>
+                    <div id="comentario" class="publicacao">
+                        <span class="nome">${data[i].login}:</span>
+                        <span class="descricao">${data[i].descricao}</span>
                         </div>
                         `
             }

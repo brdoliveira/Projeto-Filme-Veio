@@ -340,6 +340,31 @@
             border: 5px solid #ff4500;
             color: red;
         }
+        
+        .publicacao {
+            background-color: white;
+            margin: 0 auto;
+            width: 50%;
+            display: block;
+            border: 1px solid rgb(255, 95, 37);
+            border-radius: 5px;
+            padding: 5px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+        
+        .nome {
+            float: left;
+            color: rgb(255, 95, 37);
+            font-weight: bold;
+            /* border: 1px solid rgb(255, 95, 37); */
+        }
+        
+        .descricao {
+            height: auto;
+            width: auto;
+            margin-left: 13%;
+        }
         /* Fim parte chat e forum*/
         /* Lista de filmes pagina*/
         
