@@ -10,11 +10,21 @@ create table Usuario(
 	senha varchar(16)
 );
 
+create table Chat(
+ idChat int primary key auto_increment,
+ nomeChat varchar(50)
+);
+
+insert into Chat values(null, 'Geral'),(null,'Film Noir'),(null,'Classicos'),(null,'Spaghetti Western');
+select * from chat;
+
 create table Publicacao(
-	idChat int primary key auto_increment,
+	idPublicacao int primary key auto_increment,
     descricao varchar(200),
-    fkUsuario int
+    fkUsuario int,
+    fkChat int
 );
 alter table Publicacao add foreign key (fkUsuario) references Usuario(idUsuario);
+alter table Publicacao add foreign key (fkChat) references Chat(idChat);
 
 drop database FilmeVeio;

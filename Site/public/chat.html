@@ -43,39 +43,37 @@
                 <div class="informacoes-usuario">
                 </div>
                 <div class="chat-lista">
-                    <div class="chats">
+                    <button class="chats" id="1" onclick="chat(this.id)">
                         <div class="chat-info"><img src="./img/chat/chat-1.png">
                             <div class="nome-chat">Geral</div>
                         </div>
-                    </div>
-                    <div class="chats">
+                    </button>
+                    <button class="chats" id="2" onclick="chat(this.id)">
                         <div class="chat-info"><img src="./img/chat/chat-2.jpg">
                             <div class="nome-chat">Film Noir</div>
                         </div>
-                    </div>
-                    <div class="chats">
+                    </button>
+                    <button class="chats" id="3" onclick="chat(this.id)">
                         <div class="chat-info"><img src="./img/chat/chat-3.png">
                             <div class="nome-chat">Classicos</div>
                         </div>
-                    </div>
-                    <div class="chats">
+                    </button>
+                    <button class="chats" id="4" onclick="chat(this.id)">
                         <div class="chat-info"><img src="./img/chat/chat-4.jpg">
                             <div class="nome-chat">Spaghetti Western</div>
                         </div>
-                    </div>
+                    </button>
                 </div>
             </div>
             <div class="chat-container">
-                <h1>Chat</h1>
+                <h1 onclick=" document.location.reload()">Chat</h1>
                 <div class="mensagem">
-                    <form id="form_publicar" method="post" onsubmit="return publicar()">
-                        <div class="texto-mensagem"><input id="chat" name="descricao"></div>
-                        <button id="btn_publicar" class="btn-chat"><img src="./img/seta.png"></button>
-                    </form>
+                    <div class="texto-mensagem"><input id="desc" name="descricao"></div>
+                    <button id="btn_publicar" class="btn-chat" onclick="comentar()"><img src="./img/seta.png"></button>
                 </div>
                 <br>
                 <div class="feed">
-                    <div id="feed_container" class="container">
+                    <div id="aparecer_chat" class="container">
                     </div>
                 </div>
             </div>
@@ -86,6 +84,12 @@
 <script src="./js/main.js"></script>
 <script>
     window.onload = ao_entrar;
+    idChat = sessionStorage.Chat_usuario_meuapp;
+
+    function chat(chat_id) {
+        sessionStorage.Chat_usuario_meuapp = chat_id;
+        document.location.reload()
+    }
 
     function ao_entrar() {
         entrar_pagina()
@@ -107,10 +111,39 @@
             var nome_do_usuario = sessionStorage.login_usuario_meuapp;
             console.log(nome_do_usuario)
             inserir_nome.innerHTML = `Olá <b> ${nome_do_usuario} </b> !`;
-            obterPublicacoes();
+
         }
 
 
+    }
+
+    fetch(`/publicacoes/chat_mostrar?idChat=${idChat}`, {
+        method: 'GET'
+    }).then(result => {
+        result.json().then(data => {
+            for (let i = 0; i < data.length; i++) {
+                console.log(data[i])
+                aparecer_chat.innerHTML += `
+                    <div id="comentario" class="comentario_box">
+                        <span class="">${data[i].login}:</span>
+                        <span class="">${data[i].descricao}</span>
+                        </div>
+                        `
+            }
+        })
+    })
+
+    var verificador = 0;
+
+    function comentar() {
+        var idUsuario = sessionStorage.id_usuario_meuapp;
+        var descricao = desc.value;
+        var fkChat = idChat
+
+        fetch(`/publicacoes/chat_comentar?idChat=${fkChat}&descricao=${descricao}&idUsuario=${idUsuario}`, {
+            method: 'GET'
+        })
+        document.location.reload()
     }
 
     function myFunction(x) {
@@ -126,104 +159,6 @@
     var x = window.matchMedia("(max-width: 660px)")
     myFunction(x) // Call listener function at run time
     x.addListener(myFunction) // Attach listener function on state changes
-
-    function publicar() {
-        aguardar();
-        var formulario = new URLSearchParams(new FormData(form_publicar));
-        var idUsuario = sessionStorage.id_usuario_meuapp;
-        fetch(`/publicacoes/publicar/${idUsuario}`, {
-            method: "POST",
-            body: formulario
-        }).then(resposta => {
-
-            if (resposta.ok) {
-                obterPublicacoes();
-
-                finalizarAguardar();
-            } else {
-                alert("Erro ao Publicar");
-                console.log('Erro ao publicar!');
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
-        });
-        chat.value = ""
-        return false;
-    }
-
-    function atualizarFeed(publicacoes) {
-        var feed = document.getElementById("feed_container");
-        feed.innerHTML = "";
-        for (let i = 0; i < publicacoes.length; i++) {
-            var publicacao = publicacoes[i];
-
-            var divPublicacao = document.createElement("div")
-            var divNome = document.createElement("div")
-            var divDescricao = document.createElement("div")
-
-            divNome.innerHTML = `${publicacao.nome}:`;
-            divDescricao.innerHTML = publicacao.descricao;
-
-            divPublicacao.className = "publicacao"
-            divNome.className = "nome";
-            divDescricao.className = "descricao";
-
-            divPublicacao.appendChild(divNome);
-            divPublicacao.appendChild(divDescricao);
-
-            feed.appendChild(divPublicacao);
-        }
-    }
-
-    function obterPublicacoes() {
-        aguardar();
-        fetch("/publicacoes")
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function(resposta) {
-                        atualizarFeed(resposta);
-
-                        finalizarAguardar();
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                    finalizarAguardar("Nenhum resultado encontrado ou erro na API");
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção das publicações: ${error.message}`);
-            });
-    }
-
-    function obterPublicacoesPorUsuario(idUsuario) {
-        fetch(`/publicacoes/${idUsuario}`)
-            .then(resposta => {
-                if (resposta.ok) {
-                    resposta.json().then(function(resposta) {
-                        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
-                        // alert(JSON.stringify(resposta))
-                    });
-                } else {
-                    console.error('Nenhum dado encontrado ou erro na API');
-                }
-            })
-            .catch(function(error) {
-                console.error(`Erro na obtenção das publicações do usuário: ${error.message}`);
-            });
-    }
-
-    function aguardar() {
-        console.log("Aguarde!")
-    }
-
-    function finalizarAguardar(resposta) {
-        console.log("finalizarAguardar")
-        if (resposta) {
-            console.log("correto!")
-        }
-    }
 </script>
 
 </html>
